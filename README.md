@@ -17,6 +17,8 @@ An experimental, structured Android control environment for AI agents on Windows
 
 开发环境在 2026-10-18 完成过一次 API35 / F-Droid Basic 的真实闭环：启动 → Search → 输入 `Aurora` → 独立确认同字段文字与焦点 → 正常停机。该次会话约117.35秒，不能作为稳定性或性能排名。公开仓库没有附带私人原始运行记录，因此此处是维护者对开发验收的摘要，**不构成当前 checkout 的验收凭据**。详见[验证状态](docs/validation-status.md)。
 
+后续已实现[AI逐步会话封装](docs/stepwise-agent-session.md)，11项离线检查通过。首次新实机尝试在launch后的两次读取中遭遇 `window_changed` / `unstable_tree`，86.111秒正常收尾，未点击或输入，AI多步目标未通过。另有[失败快照诊断候选](experiments/reader-failure-diagnostics/README.md)，已离线编译和完成4项协议兼容性检查，尚未安装或实机验证。失败原样保留，不扩大重试或放松完整XML保护。
+
 ## 先离线查看
 
 Python 3.10+；这两组测试使用 fake ADB / XML fixtures，不需要 Android SDK 或设备：
@@ -48,6 +50,8 @@ python sandbox.py check
 | `departments/workbuddy/` | Windows 实例准备和生命周期脚本 |
 | `integration/` | 固定 profile、响应校验、离线清点与测试 |
 | `docs/research/` | Windows / Linux 共享内核 / Cuttlefish 路线研究 |
+| `tools/stepwise_session.py` | 外部AI逐步选动作、完整响应绑定和独立到期收尾 |
+| `experiments/reader-failure-diagnostics/` | 未部署的失败快照元数据实验 |
 
 目录名保留开发来源，方便追溯。公开源文件快照见[文件与 SHA256](docs/source-snapshot.json)。
 
