@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-18",
+  "scope": "Public source snapshot only; fake ADB and local XML tests, no device, SDK or network calls.",
+  "checks": [
+    {
+      "label": "fake-adb",
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "departments/zcode",
+        "-p",
+        "test_adb_control.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "tests_run": 39,
+      "skipped": 2
+    },
+    {
+      "label": "xml-adapter",
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "departments/deepseek/tests",
+        "-p",
+        "test_content_adapter.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "tests_run": 63,
+      "skipped": 0
+    },
+    {
+      "label": "phone-help",
+      "argv": [
+        "python",
+        "departments/antigravity/phone.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "tests_run": null,
+      "skipped": 0
+    },
+    {
+      "label": "public-gate",
+      "argv": [
+        "python",
+        "sandbox.py",
+        "check"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "passed": true,
+      "tests_run": null,
+      "skipped": 0
+    }
+  ],
+  "snapshot_hashes_preserved": 55,
+  "jar_entries": [
+    "classes.dex"
+  ],
+  "public_receipt_fail_closed": true,
+  "live_test_executed": false,
+  "limits": [
+    "Only the listed suites ran, not full historical regression.",
+    "Java rebuild and fresh-checkout live deployment have not run."
+  ]
+}

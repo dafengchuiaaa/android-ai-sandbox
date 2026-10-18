@@ -1,0 +1,22 @@
+{
+  "scope": "Public research snapshot. Live development acceptance is not transferred to this checkout.",
+  "phone_cli": {
+    "result": "unverified"
+  },
+  "search_scenario": {
+    "result": "unverified"
+  },
+  "product_gates": {
+    "live_ai_demo": false,
+    "application_refresh": false,
+    "human_foreground_input": false
+  },
+  "component_bundle": {},
+  "lightweight_target_met": false,
+  "remaining_project_work": [
+    "Portable trusted SDK configuration",
+    "Fresh checkout acceptance",
+    "Current AI demonstration, network refresh and human foreground input",
+    "Windows whole-host resource and bounded always-on measurement"
+  ]
+}

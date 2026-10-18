@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!-- SYNTHETIC FIXTURE (DS-01): intentionally malformed XML (unclosed element,
+     mismatched tags). Used to check the failure path, not the happy path. -->
+<hierarchy rotation="0">
+  <node index="0" class="android.widget.FrameLayout" text="" bounds="[0,0][720,1184]">
+    <node index="0" class="android.widget.TextView" text="unterminated
+  </node>
+</hierarchy>

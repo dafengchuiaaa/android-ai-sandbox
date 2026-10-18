@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!-- SYNTHETIC FIXTURE (DS-01 v1.1.0): a search page where chrome action buttons
+     live in the SAME window as real result rows. Cancel / Settings / OK are
+     whole-string action labels and must be excluded during candidate
+     generation; "Settings Sync" (a different string) and a summary that merely
+     contains the word "settings" must survive. -->
+<hierarchy rotation="0">
+  <node index="0" class="android.widget.FrameLayout" package="org.fdroid.basic" text="" content-desc="" clickable="false" enabled="true" bounds="[0,0][720,1184]">
+    <node index="0" class="android.widget.EditText" package="org.fdroid.basic" text="termux" content-desc="" clickable="true" enabled="true" bounds="[0,56][720,168]"/>
+    <node index="1" class="android.view.View" package="org.fdroid.basic" text="" content-desc="" clickable="true" enabled="true" bounds="[0,200][720,320]">
+      <node index="0" class="android.widget.TextView" package="org.fdroid.basic" text="Cancel" content-desc="" clickable="false" enabled="true" bounds="[112,230][300,290]"/>
+    </node>
+    <node index="2" class="android.view.View" package="org.fdroid.basic" text="" content-desc="" clickable="true" enabled="true" bounds="[0,320][720,440]">
+      <node index="0" class="android.widget.TextView" package="org.fdroid.basic" text="Settings" content-desc="" clickable="false" enabled="true" bounds="[112,350][300,410]"/>
+    </node>
+    <node index="3" class="android.view.View" package="org.fdroid.basic" text="" content-desc="" clickable="true" enabled="true" bounds="[0,440][720,560]">
+      <node index="0" class="android.widget.TextView" package="org.fdroid.basic" text="Termux" content-desc="" clickable="false" enabled="true" bounds="[160,460][346,508]"/>
+      <node index="1" class="android.widget.TextView" package="org.fdroid.basic" text="A terminal emulator with packages" content-desc="" clickable="false" enabled="true" bounds="[160,508][688,548]"/>
+    </node>
+    <node index="4" class="android.view.View" package="org.fdroid.basic" text="" content-desc="" clickable="true" enabled="true" bounds="[0,560][720,680]">
+      <node index="0" class="android.widget.TextView" package="org.fdroid.basic" text="Settings Sync" content-desc="" clickable="false" enabled="true" bounds="[160,580][400,628]"/>
+      <node index="1" class="android.widget.TextView" package="org.fdroid.basic" text="Sync your app settings across devices" content-desc="" clickable="false" enabled="true" bounds="[160,628][688,668]"/>
+    </node>
+    <node index="5" class="android.view.View" package="org.fdroid.basic" text="" content-desc="" clickable="true" enabled="true" bounds="[0,680][720,800]">
+      <node index="0" class="android.widget.TextView" package="org.fdroid.basic" text="OK" content-desc="" clickable="false" enabled="true" bounds="[112,710][200,770]"/>
+    </node>
+  </node>
+</hierarchy>

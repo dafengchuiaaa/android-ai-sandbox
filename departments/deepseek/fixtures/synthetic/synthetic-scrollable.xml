@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!-- SYNTHETIC FIXTURE (DS-01): scrollable containers, one usable and one too
+     small to derive an in-bounds swipe. Scroll direction is never guessed. -->
+<hierarchy rotation="0">
+  <node index="0" class="android.widget.FrameLayout" package="org.fdroid.basic" text="" clickable="false" enabled="true" bounds="[0,0][720,1184]">
+    <node index="0" class="android.widget.ScrollView" package="org.fdroid.basic" resource-id="org.fdroid.basic:id/list" text="" clickable="false" enabled="true" scrollable="true" bounds="[0,0][720,1024]"/>
+    <node index="1" class="android.view.View" package="org.fdroid.basic" resource-id="org.fdroid.basic:id/strip" text="" clickable="false" enabled="true" scrollable="true" bounds="[0,1024][720,1027]"/>
+    <node index="2" class="android.widget.ScrollView" package="org.fdroid.basic" resource-id="org.fdroid.basic:id/disabled_list" text="" clickable="false" enabled="false" scrollable="true" bounds="[0,900][720,1000]"/>
+  </node>
+</hierarchy>

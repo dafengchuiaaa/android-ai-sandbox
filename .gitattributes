@@ -1,0 +1,2 @@
+# Preserve reviewed source bytes: content hashes are part of the control contract.
+* -text

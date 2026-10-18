@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!-- SYNTHETIC FIXTURE (DS-01): the search box echoes "termuxtermux".
+     Concatenated text is not an exact match for "termux" and is never a result. -->
+<hierarchy rotation="0">
+  <node index="0" class="android.widget.FrameLayout" package="org.fdroid.basic" text="" clickable="false" enabled="true" bounds="[0,0][720,1184]">
+    <node index="0" class="android.widget.EditText" package="org.fdroid.basic" text="termuxtermux" clickable="true" enabled="true" bounds="[112,56][704,168]"/>
+    <node index="1" class="android.view.View" package="org.fdroid.basic" text="Discover" clickable="true" enabled="true" bounds="[0,1024][230,1184]"/>
+    <node index="2" class="android.view.View" package="org.fdroid.basic" text="My apps" clickable="true" enabled="true" bounds="[491,1024][720,1184]"/>
+  </node>
+</hierarchy>

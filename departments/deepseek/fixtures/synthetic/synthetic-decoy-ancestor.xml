@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!-- SYNTHETIC FIXTURE (DS-01): a clickable decoy whose rectangle covers the
+     label's centre appears EARLIER in document order than the real parent row.
+     resolve must follow the real parent chain, never rectangle containment. -->
+<hierarchy rotation="0">
+  <node index="0" class="android.widget.FrameLayout" package="org.fdroid.basic" text="" clickable="false" enabled="true" bounds="[0,0][720,1184]">
+    <node index="0" class="android.view.View" package="org.fdroid.basic" resource-id="decoy:id/fullscreen_overlay" text="" clickable="true" enabled="true" bounds="[0,0][720,1184]"/>
+    <node index="1" class="android.view.View" package="org.fdroid.basic" text="" clickable="false" enabled="true" bounds="[0,176][720,1184]">
+      <node index="0" class="android.view.View" package="org.fdroid.basic" resource-id="org.fdroid.basic:id/theme_row" text="" clickable="true" enabled="true" bounds="[0,280][720,432]">
+        <node index="0" class="android.widget.TextView" package="org.fdroid.basic" text="Theme" clickable="false" enabled="true" bounds="[112,312][217,360]"/>
+        <node index="1" class="android.widget.TextView" package="org.fdroid.basic" text="Follow system" clickable="false" enabled="true" bounds="[112,360][297,400]"/>
+      </node>
+    </node>
+  </node>
+</hierarchy>

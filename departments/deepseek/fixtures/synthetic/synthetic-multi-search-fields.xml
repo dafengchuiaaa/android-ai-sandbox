@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!-- SYNTHETIC FIXTURE (DS-01 v1.1.0): two search fields in the same window. The
+     first one exactly echoes the query, but the operated field cannot be
+     identified from the XML alone, so input_matches_query must stay false and
+     content_verified must stay false. -->
+<hierarchy rotation="0">
+  <node index="0" class="android.widget.FrameLayout" package="org.fdroid.basic" text="" content-desc="" clickable="false" enabled="true" bounds="[0,0][720,1184]">
+    <node index="0" class="android.widget.EditText" package="org.fdroid.basic" resource-id="org.fdroid.basic:id/search_top" text="termux" content-desc="" clickable="true" enabled="true" bounds="[0,56][720,168]"/>
+    <node index="1" class="android.widget.EditText" package="org.fdroid.basic" resource-id="org.fdroid.basic:id/search_inline" text="fdroid" content-desc="" clickable="true" enabled="true" bounds="[0,200][720,312]"/>
+    <node index="2" class="android.view.View" package="org.fdroid.basic" text="" content-desc="" clickable="true" enabled="true" bounds="[0,400][720,520]">
+      <node index="0" class="android.widget.TextView" package="org.fdroid.basic" text="Termux" content-desc="" clickable="false" enabled="true" bounds="[160,420][346,468]"/>
+      <node index="1" class="android.widget.TextView" package="org.fdroid.basic" text="A terminal emulator with packages" content-desc="" clickable="false" enabled="true" bounds="[160,468][688,508]"/>
+    </node>
+  </node>
+</hierarchy>

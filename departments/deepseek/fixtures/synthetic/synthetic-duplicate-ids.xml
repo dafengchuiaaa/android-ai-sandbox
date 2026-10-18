@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!-- SYNTHETIC FIXTURE (DS-01): duplicated and empty resource-ids must never be
+     merged away. Root <hierarchy> has no package attribute on purpose. -->
+<hierarchy rotation="0">
+  <node index="0" class="android.widget.FrameLayout" package="org.fdroid.basic" resource-id="" text="" clickable="false" enabled="true" bounds="[0,0][720,1184]">
+    <node index="0" class="android.widget.TextView" package="org.fdroid.basic" resource-id="org.fdroid.basic:id/title" text="First" clickable="false" enabled="true" bounds="[0,0][720,100]"/>
+    <node index="1" class="android.widget.TextView" package="org.fdroid.basic" resource-id="org.fdroid.basic:id/title" text="Second" clickable="false" enabled="true" bounds="[0,100][720,200]"/>
+    <node index="2" class="android.widget.TextView" package="org.fdroid.basic" resource-id="" text="Third" clickable="false" enabled="true" bounds="[0,200][720,300]"/>
+    <node index="3" class="android.widget.TextView" package="org.fdroid.basic" text="Fourth" clickable="false" enabled="true" bounds="[0,300][720,400]"/>
+    <node index="4" class="android.view.View" package="org.fdroid.basic" resource-id="org.fdroid.basic:id/title" text="" clickable="true" enabled="true" bounds="[0,400][720,500]"/>
+  </node>
+</hierarchy>

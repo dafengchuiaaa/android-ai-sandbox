@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!-- SYNTHETIC FIXTURE (DS-01): no node carries a package attribute at all.
+     apps must be empty, never a fabricated or empty-string package name. -->
+<hierarchy rotation="0">
+  <node index="0" class="android.widget.FrameLayout" text="" clickable="false" enabled="true" bounds="[0,0][720,1184]">
+    <node index="0" class="android.view.View" text="Hello" clickable="true" enabled="true" bounds="[0,0][720,200]"/>
+  </node>
+</hierarchy>

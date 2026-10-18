@@ -1,0 +1,337 @@
+{
+  "date": "2026-10-18",
+  "files": [
+    {
+      "path": "departments/antigravity/StableUiRead.java",
+      "sha256": "da85850891beeb80201475beabf91854f0aca82ae49356f07db3c0d64b70066f",
+      "bytes": 4915,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/antigravity/phone.py",
+      "sha256": "69b34d440e2b597b1361c6ae6410624aef2b826b2d1deb12572b97c9954bdd23",
+      "bytes": 67979,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/antigravity/stable_ui_read.jar",
+      "sha256": "e78ed078885c3bab594b8db86dc369bdbccd1f217f66f0c475a398bc52aca521",
+      "bytes": 4258,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/antigravity/stable_ui_read.py",
+      "sha256": "4f5984bf2713d2346b21e993a5f2496efae10539654b65570347b3fb446a5bae",
+      "bytes": 5697,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/antigravity/tests/test_phone.py",
+      "sha256": "3378eb2140524de65011883f1a14b7e56bb528c667d5de77f3c4a00a1c4e617b",
+      "bytes": 21850,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/content_adapter.py",
+      "sha256": "84984c502b32ecae04485fe98ca7076a1164ce733e2b23a4a4b843217be7d293",
+      "bytes": 41038,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/originals/hierarchy-20261015T024231-c934f0c7.xml",
+      "sha256": "c13e5d5c5c601cb7c7dcb5b3d623f79b60985d92a00e418a5ca58567e34c1406",
+      "bytes": 14977,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/originals/hierarchy-20261015T030637-30a5f3db.xml",
+      "sha256": "bcdb1fc39a1a6940367606df2b787e45da9ecbf733e72681732caf87d1dad29c",
+      "bytes": 13220,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/originals/hierarchy-home.xml",
+      "sha256": "6ca81834c3cb69cac848057e6a0c9ef1440d08313ecfd23b86eeb581d2a585e1",
+      "bytes": 26579,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/originals/hierarchy-search-results.xml",
+      "sha256": "c797c0e0b79d7b997ecf4c4a8942e21c9aec13dea762db2089e64e124433cecd",
+      "bytes": 20302,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/originals/theme-dialog.xml",
+      "sha256": "d6af514c4828f430814939c5c53b8adb87ad1672aa8da919c9f8c0684c8eec75",
+      "bytes": 7204,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/synthetic/synthetic-bad-bounds.xml",
+      "sha256": "15604611fa0f4821766179419ada7897b0dcdad68c79160b9b8df6fbee4341df",
+      "bytes": 1214,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/synthetic/synthetic-chrome-buttons.xml",
+      "sha256": "0439d45b408981fac1df5551f44f0c8ca893aaf483c284a76d8c6ac1b690c9ea",
+      "bytes": 2917,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/synthetic/synthetic-decoy-ancestor.xml",
+      "sha256": "51f5107c97eb230dfce1f15e6c41c7c7e9f195460bd32446e107fd87f3bf4a5f",
+      "bytes": 1352,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/synthetic/synthetic-disabled-chain.xml",
+      "sha256": "b31b32ed422b4fb42a3cc7932ccc363db422d46bbaf0ce9dfdfbb2e59c898ce4",
+      "bytes": 2298,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/synthetic/synthetic-disabled-node.xml",
+      "sha256": "ee2a81143f277122c7df8f3fdd70d3619893d162a9859a9ecdf0ea56968f57f4",
+      "bytes": 881,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/synthetic/synthetic-duplicate-ids.xml",
+      "sha256": "cfc15bb1b4af5d56f4f0914c21fb0783b4908bba27aaedbc5319820fac1c24ab",
+      "bytes": 1311,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/synthetic/synthetic-echo-concat.xml",
+      "sha256": "c8a51b7fd2c3df349354731d75f4cc3b7de5f4271bb23ee4298429c695f5718b",
+      "bytes": 870,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/synthetic/synthetic-injection-text.xml",
+      "sha256": "7083c388e432c67d60bac232b11b70590055ac34f3b9a4be3466aaf6e40ce9c3",
+      "bytes": 1025,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/synthetic/synthetic-malformed.xml",
+      "sha256": "b8a90d8be73a72d4a4ccc029be6c0261501072a3ffeea63773b67baee07851dd",
+      "bytes": 421,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/synthetic/synthetic-min-results.xml",
+      "sha256": "f131af1a6a5df4e956ea8334256e60426ac10c67f42035e50de07e87207b5e53",
+      "bytes": 1852,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/synthetic/synthetic-multi-search-fields.xml",
+      "sha256": "ee39c8d1a699d8123d62f61c90cf537832a7c9a7c4bb5f4d286d33971ee6971a",
+      "bytes": 1518,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/synthetic/synthetic-no-package.xml",
+      "sha256": "4b3155c550c65b9a873f7bd370bd2cd20f34139145492fc6e804c165a71ea5f0",
+      "bytes": 496,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/fixtures/synthetic/synthetic-scrollable.xml",
+      "sha256": "3fd31ff591836162d5e5d6dfde8083fd001ca3b27e5f3d5054a6f2cb6a2b59bb",
+      "bytes": 1036,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/scenarios/fdroid_search.py",
+      "sha256": "a9975b22cacbae810dba1d49591ab5a8ca9a02984ad222d580fa4c972d5eec6a",
+      "bytes": 44666,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/scenarios/round3/fdroid_details.py",
+      "sha256": "90322b0168c071c67c0445edf8845f21cbd146f648a12bf57bef68254daddb3e",
+      "bytes": 37768,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/scenarios/round3/tests/fake_specs_r3.py",
+      "sha256": "08050a09ce129120185aecc1954130eb7c8700cec3c7e07527f4568304b2c275",
+      "bytes": 3044,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/scenarios/round3/tests/make_evidence_r3.py",
+      "sha256": "db946c9d1127082fcf1454897aec354ffd7c411b9bb563f7c629e8f4ccf4953b",
+      "bytes": 6156,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/scenarios/round3/tests/test_fdroid_details.py",
+      "sha256": "cf510dee68af92525e889c51c1dfe9bb38de21be55add7510a7e4ad72206faf8",
+      "bytes": 21068,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/scenarios/round4_profiles.py",
+      "sha256": "e4ef4efdb12ba38b8548655650b64efc8410f727ae05ec45a95c8f84e16484a1",
+      "bytes": 6671,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/scenarios/tests/fake_phone.py",
+      "sha256": "4eb168d310bd97d9789c2f49d7fa85a1eb85c81de85271d8a7bf50f9855618f7",
+      "bytes": 4168,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/scenarios/tests/fake_specs.py",
+      "sha256": "0ed3b59b48adc5d8c61c91502e945079c101cd2786a7486a84b0d3618092b8a8",
+      "bytes": 4617,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/scenarios/tests/make_evidence.py",
+      "sha256": "224780b56647e90e8c4b08b69f472eb3836f1b1301132f98262c498578f8ccc6",
+      "bytes": 7717,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/scenarios/tests/test_fdroid_search.py",
+      "sha256": "0e0f14babcc4cf6090431f9cb12f36e7e7f287766cbef20b3040529c2b98142f",
+      "bytes": 35918,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/deepseek/tests/test_content_adapter.py",
+      "sha256": "2ce9de30c5e64c269bbc2e50b3359ad10cfaa7e3753225a3efbb5b1825845a36",
+      "bytes": 44508,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/workbuddy/round4-launcher/prepare-api35.ps1",
+      "sha256": "5646f684872ff231b421873e5dd7f04f7542b323022816c2ee13c90c802294af",
+      "bytes": 14497,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/workbuddy/round4-launcher/start-api35.ps1",
+      "sha256": "5ac42f5d2074fe04866d9dac75210d732e7b8dd3b53cdf66a2c828adc077fa77",
+      "bytes": 44020,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/workbuddy/start-baseline.ps1",
+      "sha256": "70b8a6871fdaeb920b1e438727639f8e06ed54a19c92e4130a4286bcba133fcb",
+      "bytes": 19068,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/zcode/adb_control.py",
+      "sha256": "0ad4c2096d554593b50066b8f44ac4c46a52216b7b9c93a28419436431815fc3",
+      "bytes": 16812,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "departments/zcode/test_adb_control.py",
+      "sha256": "f3dffc6277b8eb00b0cbfa7543e5054c7f9ecfbc59f893900b9b79569fe5bd84",
+      "bytes": 25670,
+      "source": "reviewed-development-snapshot",
+      "upstream_sha256": "c10f17b56c82b8a3b50f58a20f556631e23f9b55dda5044cda161d53470626c9",
+      "public_change": "Skip symlink tests explicitly when Windows returns privilege error 1314; no driver behavior changed."
+    },
+    {
+      "path": "integration/check_delivery.py",
+      "sha256": "e52c3ca1bd0422552d0d85f2d6e1e3256da43d0df8773cd1bf9c64cc2d81d90d",
+      "bytes": 6252,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "integration/instance_profiles.py",
+      "sha256": "ce8583e583c651dbc3f89739d883173308b03313103afbc9c72c74ff27ba2c4b",
+      "bytes": 9304,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "integration/live_acceptance.py",
+      "sha256": "66ab46a1aa25938cd8b0bf043366c0c28375627790be6e8fc6160716776512e2",
+      "bytes": 8797,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "integration/probe_phone_snapshot.py",
+      "sha256": "d6b12b93a803e4bb346f4b349ad4790eb84ebaa55248cfd88e7f254736964582",
+      "bytes": 5261,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "integration/probe_scenario.py",
+      "sha256": "53b223cd724ce5741b0329bc65cd83b147a1a77e4578ff400d56cc329b431e1d",
+      "bytes": 1874,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "integration/run_isolated_phone_tests.py",
+      "sha256": "d1d6817c098e154f8a6b5bdc0856f5021b72bfc1cf457a163bc1c0d5ed6241f0",
+      "bytes": 1350,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "integration/tests/test_delivery_gate.py",
+      "sha256": "cf2f2052ce424abf55099966103c1ec977dff8874e0be8172fe7e1fc1123b628",
+      "bytes": 4383,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "integration/tests/test_phone_dump_retry.py",
+      "sha256": "86f8308f887ccfa5cafe03b0aa9686c9c560f3d86439ca99b5673b8066e4c3f8",
+      "bytes": 4634,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "integration/tests/test_preclick_xml_forensics.py",
+      "sha256": "0d5865c02dd55d3fe2fe8e63c32ea6d701d8c89ca633c21d8c54c49aece1e791",
+      "bytes": 31292,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "integration/tests/test_validate_response.py",
+      "sha256": "944b5df7f90b7838f381d096c14382381a7458ae12e4f5283179fee5e1aa6c28",
+      "bytes": 4979,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "integration/tests/test_verify_baseline.py",
+      "sha256": "7809302aaadbf07609a6c3334f06ebb017342982766836e8cf46747196d656a5",
+      "bytes": 3764,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "integration/validate_response.py",
+      "sha256": "09f21b1259d506dd7894ea17258674e5eab6608b86167e4d69e9d525e4382f46",
+      "bytes": 11575,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "integration/verify_baseline.py",
+      "sha256": "147286991775ce0c2608f8bf64f90d8ae1d98cb25f363f1b66f4ef3d87637720",
+      "bytes": 7826,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "integration/xml_diff_forensics.py",
+      "sha256": "8c1569acf27f9636fc9e9a4ee89a435613ab3decd85403162ff02a9aafc34bc7",
+      "bytes": 43924,
+      "source": "reviewed-development-snapshot"
+    },
+    {
+      "path": "sandbox.py",
+      "sha256": "ccb61bb4c625115b98981ffb4a1df98be71386615538c8a05a7d861cb2c85a27",
+      "bytes": 7394,
+      "source": "reviewed-development-snapshot"
+    }
+  ]
+}

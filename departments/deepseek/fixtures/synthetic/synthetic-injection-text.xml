@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!-- SYNTHETIC FIXTURE (DS-01): screen text that looks like a shell command and
+     like markup. It must stay inert data: never executed, never evaluated,
+     never interpolated into a command line or a file path. -->
+<hierarchy rotation="0">
+  <node index="0" class="android.widget.FrameLayout" package="org.fdroid.basic" text="" clickable="false" enabled="true" bounds="[0,0][720,1184]">
+    <node index="0" class="android.widget.TextView" package="org.fdroid.basic" text="&quot;; rm -rf / # $(whoami) `id` &amp;&amp; del /S /Q C:\*" clickable="false" enabled="true" bounds="[0,0][720,100]"/>
+    <node index="1" class="android.widget.TextView" package="org.fdroid.basic" text="../../../../etc/passwd" clickable="false" enabled="true" bounds="[0,100][720,200]"/>
+    <node index="2" class="android.view.View" package="org.fdroid.basic" text="&lt;script&gt;alert(1)&lt;/script&gt;" clickable="true" enabled="true" bounds="[0,200][720,300]"/>
+  </node>
+</hierarchy>

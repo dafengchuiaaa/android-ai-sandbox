@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!-- SYNTHETIC FIXTURE (DS-01): disabled nodes and nodes with no supported action.
+     clickable=true but enabled=false must never yield a plan. -->
+<hierarchy rotation="0">
+  <node index="0" class="android.widget.FrameLayout" package="org.fdroid.basic" text="" clickable="false" enabled="true" bounds="[0,0][720,1184]">
+    <node index="0" class="android.view.View" package="org.fdroid.basic" text="" clickable="true" enabled="false" bounds="[0,280][720,432]">
+      <node index="0" class="android.widget.TextView" package="org.fdroid.basic" text="Disabled row" clickable="false" enabled="true" bounds="[112,312][300,360]"/>
+    </node>
+    <node index="1" class="android.widget.TextView" package="org.fdroid.basic" text="Lonely label" clickable="false" enabled="true" bounds="[112,500][400,560]"/>
+  </node>
+</hierarchy>

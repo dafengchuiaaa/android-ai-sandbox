@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!-- SYNTHETIC FIXTURE (DS-01): hand-written minimal F-Droid Basic search-results
+     screen, used only for offline unit tests. NOT a device capture. -->
+<hierarchy rotation="0">
+  <node index="0" class="android.widget.FrameLayout" package="org.fdroid.basic" content-desc="" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][720,1184]">
+    <node index="0" class="android.widget.EditText" package="org.fdroid.basic" text="termux" resource-id="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="true" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[112,56][704,168]"/>
+    <node index="1" class="android.view.View" package="org.fdroid.basic" text="" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,248][720,424]">
+      <node index="0" class="android.widget.TextView" package="org.fdroid.basic" text="Termux" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[160,272][346,320]"/>
+      <node index="1" class="android.widget.TextView" package="org.fdroid.basic" text="A terminal emulator with packages" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[160,320][688,400]"/>
+    </node>
+  </node>
+</hierarchy>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!-- SYNTHETIC FIXTURE (DS-01): invalid / missing / degenerate bounds and an
+     unreadable boolean. No coordinates may be invented from these. -->
+<hierarchy rotation="0">
+  <node index="0" class="android.widget.FrameLayout" package="org.fdroid.basic" text="" clickable="false" enabled="true" bounds="[0,0][720,1184]">
+    <node index="0" class="android.view.View" package="org.fdroid.basic" text="A" clickable="true" enabled="true" bounds="not-a-rect"/>
+    <node index="1" class="android.view.View" package="org.fdroid.basic" text="B" clickable="true" enabled="true" bounds="[0,0][0,0]"/>
+    <node index="2" class="android.view.View" package="org.fdroid.basic" text="C" clickable="true" enabled="true" bounds="[10,10][5,5]"/>
+    <node index="3" class="android.view.View" package="org.fdroid.basic" text="D" clickable="true" enabled="true"/>
+    <node index="4" class="android.view.View" package="org.fdroid.basic" text="E" clickable="true" enabled="true" bounds="[100,100][300,300]"/>
+    <node index="5" class="android.view.View" package="org.fdroid.basic" text="F" clickable="true" enabled="yes" bounds="[400,400][600,600]"/>
+  </node>
+</hierarchy>
