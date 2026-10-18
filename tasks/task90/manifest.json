@@ -1,0 +1,338 @@
+{
+  "package_id": "argon-task90-read-refusal-diagnostics-20261018-r1",
+  "created_at_utc": "2026-10-18T12:15:34.038446+00:00",
+  "reference_commit": "5cf7d0651eeed147e0627fbc6817d72b491d6931",
+  "production_files_verified": 112,
+  "actual_failed_xml_pair_available": false,
+  "candidate_diagnostics_live_executed": false,
+  "files": [
+    {
+      "path": "TASK.md",
+      "bytes": 7084,
+      "sha256": "d739798f53e8f30ef884725a1018c616d249b5bf78608417b168c7914960bbc0",
+      "original_sha256": "d739798f53e8f30ef884725a1018c616d249b5bf78608417b168c7914960bbc0",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/project/departments/antigravity/StableUiRead.java",
+      "bytes": 4915,
+      "sha256": "da85850891beeb80201475beabf91854f0aca82ae49356f07db3c0d64b70066f",
+      "original_sha256": "da85850891beeb80201475beabf91854f0aca82ae49356f07db3c0d64b70066f",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/project/departments/antigravity/stable_ui_read.py",
+      "bytes": 5697,
+      "sha256": "4f5984bf2713d2346b21e993a5f2496efae10539654b65570347b3fb446a5bae",
+      "original_sha256": "4f5984bf2713d2346b21e993a5f2496efae10539654b65570347b3fb446a5bae",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/project/departments/antigravity/phone.py",
+      "bytes": 67979,
+      "sha256": "69b34d440e2b597b1361c6ae6410624aef2b826b2d1deb12572b97c9954bdd23",
+      "original_sha256": "69b34d440e2b597b1361c6ae6410624aef2b826b2d1deb12572b97c9954bdd23",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/project/departments/zcode/adb_control.py",
+      "bytes": 16812,
+      "sha256": "0ad4c2096d554593b50066b8f44ac4c46a52216b7b9c93a28419436431815fc3",
+      "original_sha256": "0ad4c2096d554593b50066b8f44ac4c46a52216b7b9c93a28419436431815fc3",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/project/integration/validate_response.py",
+      "bytes": 11575,
+      "sha256": "09f21b1259d506dd7894ea17258674e5eab6608b86167e4d69e9d525e4382f46",
+      "original_sha256": "09f21b1259d506dd7894ea17258674e5eab6608b86167e4d69e9d525e4382f46",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/project/integration/instance_profiles.py",
+      "bytes": 9301,
+      "sha256": "e6ee55e7dcf18038e92d864ea6228a767f42709d73408ff5082c1c1ac0047d20",
+      "original_sha256": "ce8583e583c651dbc3f89739d883173308b03313103afbc9c72c74ff27ba2c4b",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/project/sandbox.py",
+      "bytes": 7394,
+      "sha256": "ccb61bb4c625115b98981ffb4a1df98be71386615538c8a05a7d861cb2c85a27",
+      "original_sha256": "ccb61bb4c625115b98981ffb4a1df98be71386615538c8a05a7d861cb2c85a27",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/diagnostics-r1/README.md",
+      "bytes": 1709,
+      "sha256": "18ba97e5921ad283e29e10d8dff1a246a21d005356b787c0ab979595e1a7dbd6",
+      "original_sha256": "18ba97e5921ad283e29e10d8dff1a246a21d005356b787c0ab979595e1a7dbd6",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/diagnostics-r1/StableUiRead.java",
+      "bytes": 5487,
+      "sha256": "188ad6933cc09c0934d36268c38d5bbec00b5d2ce479ca1e4013e7aa62b4a8d6",
+      "original_sha256": "188ad6933cc09c0934d36268c38d5bbec00b5d2ce479ca1e4013e7aa62b4a8d6",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/diagnostics-r1/diagnostics.patch",
+      "bytes": 2350,
+      "sha256": "7da6325f58599b5a9345eec8b6439c73756819d3e31f560fad8c97485ea951cd",
+      "original_sha256": "7da6325f58599b5a9345eec8b6439c73756819d3e31f560fad8c97485ea951cd",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/diagnostics-r1/source-provenance.json",
+      "bytes": 425,
+      "sha256": "663986576dba65628e20f7cdcff8decfed6b089d94eff30269f30b75af47e82f",
+      "original_sha256": "663986576dba65628e20f7cdcff8decfed6b089d94eff30269f30b75af47e82f",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/diagnostics-r1/test_diagnostics_compat.py",
+      "bytes": 2488,
+      "sha256": "7ca389d182043e721e22eb52002c53b6a4c5b53ef8d91cad19625210784f813e",
+      "original_sha256": "7ca389d182043e721e22eb52002c53b6a4c5b53ef8d91cad19625210784f813e",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/diagnostics-r1/offline-build.json",
+      "bytes": 657,
+      "sha256": "308817c3dd5a38c919c20957ed246c15629c2a1e11c9435cdbf33811e8de1736",
+      "original_sha256": "308817c3dd5a38c919c20957ed246c15629c2a1e11c9435cdbf33811e8de1736",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/current-public/tools/stepwise_session.py",
+      "bytes": 20623,
+      "sha256": "e1636f3655afc9fae345b434398fc83006d1fe811cad973db16e92a00e478056",
+      "original_sha256": "e1636f3655afc9fae345b434398fc83006d1fe811cad973db16e92a00e478056",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/current-public/tools/stepwise_support.py",
+      "bytes": 38934,
+      "sha256": "89d51285c36f56ede0999d60efb016e1d38614871d3187ad058258076bc32e72",
+      "original_sha256": "89d51285c36f56ede0999d60efb016e1d38614871d3187ad058258076bc32e72",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/current-public/tools/tests/test_stepwise_session.py",
+      "bytes": 8994,
+      "sha256": "185c7c8196ee275b0a8705a99d674e525017d82092168d4837ec4d11c236d895",
+      "original_sha256": "185c7c8196ee275b0a8705a99d674e525017d82092168d4837ec4d11c236d895",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/current-public/docs/stepwise-agent-session.md",
+      "bytes": 3041,
+      "sha256": "4b6073f67a30cda45268f2c0392a4e13c508f97cab0fb427764b4f87397d7a2c",
+      "original_sha256": "4b6073f67a30cda45268f2c0392a4e13c508f97cab0fb427764b4f87397d7a2c",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/current-public/docs/build-reader.md",
+      "bytes": 1827,
+      "sha256": "a4ccf2102fac23b5d37a90b29e8c4a08f6936caf77aea3c529091793f5e82382",
+      "original_sha256": "a4ccf2102fac23b5d37a90b29e8c4a08f6936caf77aea3c529091793f5e82382",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/current-public/docs/stepwise-validation.json",
+      "bytes": 1145,
+      "sha256": "e0a38b15dcf33ba704d8e12c957175a3627f5ae7c1ab57cc5a55a508307e5021",
+      "original_sha256": "e0a38b15dcf33ba704d8e12c957175a3627f5ae7c1ab57cc5a55a508307e5021",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/current-public/docs/validation-status.md",
+      "bytes": 2322,
+      "sha256": "b5e87cf52e90aaf36e3f9ee244cededbc57248b35a9090010fe3f9f8e3b428ab",
+      "original_sha256": "b5e87cf52e90aaf36e3f9ee244cededbc57248b35a9090010fe3f9f8e3b428ab",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/current/RESULT.md",
+      "bytes": 2462,
+      "sha256": "61613983f9d59feb6538c4efcdb0f97d4d3565bbd8beea7fff65155f9424d9b3",
+      "original_sha256": "61613983f9d59feb6538c4efcdb0f97d4d3565bbd8beea7fff65155f9424d9b3",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/current/independent-audit.json",
+      "bytes": 917,
+      "sha256": "634901282e0550197ea6eb1fb93041f2ae2cc4a0c8619e2e4114e1844dcfd065",
+      "original_sha256": "634901282e0550197ea6eb1fb93041f2ae2cc4a0c8619e2e4114e1844dcfd065",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/current/preflight-tools.json",
+      "bytes": 493,
+      "sha256": "a24bfa5fb4edc28c4149ef29fd62143ce29e3273f8efcd492ad76fab6ebacefa",
+      "original_sha256": "a24bfa5fb4edc28c4149ef29fd62143ce29e3273f8efcd492ad76fab6ebacefa",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/current/postrun-host-check.json",
+      "bytes": 212,
+      "sha256": "9da527a1eb7fe1a269945cb39ff0684f3d5bea9a250408448d4a69ffecc5e83b",
+      "original_sha256": "9da527a1eb7fe1a269945cb39ff0684f3d5bea9a250408448d4a69ffecc5e83b",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/current/run/agent-0001-launch.json",
+      "bytes": 5129,
+      "sha256": "f7288a5462cc69faec92ae69f1c31d2f708f4a9e56075f72c1b860f1a34b2652",
+      "original_sha256": "57d6b5b0891abf700983503442bdc99613aaf4b933b47b2fe5e2a7fb208946bb",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/current/run/commands.json",
+      "bytes": 26035,
+      "sha256": "a827a0a98934d19dec100c2c2b721ee801408e6a5cc094953d29fe51e1e996b2",
+      "original_sha256": "beb51dfebdcbf4c9950d20461e240c6b9390eb6202c455f9d4ebf3bdd9e5a446",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/current/run/stepwise-verdict.json",
+      "bytes": 779,
+      "sha256": "7a9aa303b2128d6a02ebe0da5d272aa23b9f12e9ec3ac0bac93360aab3c2c71a",
+      "original_sha256": "0173989c9fa7865f3c1fda036c574f26277d99c88cefaeed9761d854e6401041",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/current/run/decision-0001.json",
+      "bytes": 403,
+      "sha256": "ccd7c34fdb8188eb04b04279b38f62b195cf201b1efb2a0943c634dbd7fab398",
+      "original_sha256": "ccd7c34fdb8188eb04b04279b38f62b195cf201b1efb2a0943c634dbd7fab398",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/current/run/existing-recovery-classification.json",
+      "bytes": 1063,
+      "sha256": "e69ba85c7347d63c9a15fc4fb749cb9eaff44918594e466f2c36bb21b22f33ad",
+      "original_sha256": "e69ba85c7347d63c9a15fc4fb749cb9eaff44918594e466f2c36bb21b22f33ad",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/current/run/manifest-before.json",
+      "bytes": 457,
+      "sha256": "35b43942ae969876d1536b83d67fe8c334b7ca0bb0d340e52b0c1b0c409c1c0f",
+      "original_sha256": "2504703d297140eb79fa318167aac059b0684916f558cc6fb24ac2d6d097513b",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/current/run/manifest-after.json",
+      "bytes": 457,
+      "sha256": "35b43942ae969876d1536b83d67fe8c334b7ca0bb0d340e52b0c1b0c409c1c0f",
+      "original_sha256": "2504703d297140eb79fa318167aac059b0684916f558cc6fb24ac2d6d097513b",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/current/run/observations/stable-direct-757d054730b14373a3993b6c685816f3.json",
+      "bytes": 4421,
+      "sha256": "9752d955a93b748123ed18603022ddb42b7448427bbad2feec0f8a6b71ad6bed",
+      "original_sha256": "1c0b25c4b35a3891981f7b243eaf74d87fc35d5dcb5f1b760198330942a57bdb",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/previous-success/RESULT.md",
+      "bytes": 5362,
+      "sha256": "1a0edbb49db5ba822451c36a7f38e60b77a85542a5bc1508c50353d9b80dd0cf",
+      "original_sha256": "1a0edbb49db5ba822451c36a7f38e60b77a85542a5bc1508c50353d9b80dd0cf",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/previous-success/final-verification.json",
+      "bytes": 1514,
+      "sha256": "4c45e02c1774fd0b9ff6a4d7d09cc2390e2898ae868b983ba2ddb25d57edb497",
+      "original_sha256": "eab81559f3fe7330b97e3011c5182d100557cef65f8fc0185151c7cfd012c4d1",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/diagnostics-r1-build/result.json",
+      "bytes": 657,
+      "sha256": "308817c3dd5a38c919c20957ed246c15629c2a1e11c9435cdbf33811e8de1736",
+      "original_sha256": "308817c3dd5a38c919c20957ed246c15629c2a1e11c9435cdbf33811e8de1736",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/diagnostics-r1-build/commands.json",
+      "bytes": 1767,
+      "sha256": "929e770661a46fe4ceb80b696b106d6747d80caa806e1b46c95dd67b6160898f",
+      "original_sha256": "bb8632e403bb23fa3624031761fd223413601ad55a5e756cc5b83de96f0c03c2",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/diagnostics-r1-build/javac.stderr",
+      "bytes": 505,
+      "sha256": "6bd5c865a96b4006f0a5834e282279ef5d766b02bcfdff0a3da5109bcccc5376",
+      "original_sha256": "b523595d6287920e626f4a3a2269c3e1eaf50c2baef5af8c8a44611264fe41ea",
+      "source_encoding": "cp932",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/diagnostics-r1-build/d8.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "evidence/diagnostics-r1-build/compat-tests.stderr",
+      "bytes": 789,
+      "sha256": "909d64fff6d39880b1f6e8950084a3166c915088bc34e5d245b0b27581000f75",
+      "original_sha256": "909d64fff6d39880b1f6e8950084a3166c915088bc34e5d245b0b27581000f75",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    },
+    {
+      "path": "reference/current-production-pins.json",
+      "bytes": 16122,
+      "sha256": "8cfd1c4b0c911ff6aed8a038916d952db03cff209afac36bbcb1ed61d7d7d600",
+      "original_sha256": "8cfd1c4b0c911ff6aed8a038916d952db03cff209afac36bbcb1ed61d7d7d600",
+      "source_encoding": "utf-8-sig",
+      "transform": "Decode stated source encoding to UTF-8; developer path masking only"
+    }
+  ]
+}

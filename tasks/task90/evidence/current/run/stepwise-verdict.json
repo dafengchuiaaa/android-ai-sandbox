@@ -1,0 +1,22 @@
+{
+  "status": "failed",
+  "goal_verified": false,
+  "stopped": true,
+  "decision_mode": "external_stepwise",
+  "started_utc": "2026-10-18T11:38:51.225084+00:00",
+  "max_session_s": 360,
+  "error": "RunnerError('CLI launch failed: Stable direct UI read failed; no input retried')",
+  "error_code": "driver_timeout",
+  "cli_calls": 1,
+  "input_calls": {
+    "launch": 1,
+    "click": 0,
+    "set-text": 0
+  },
+  "text_backend_verified": false,
+  "independent_readback": false,
+  "unknown_input_state": false,
+  "elapsed_s": 86.111,
+  "ended_utc": "2026-10-18T11:40:17.334396+00:00",
+  "run_dir": "C:\\Users\\LOCAL_USER\\Documents\\ChatGPT\\手机沙箱\\round5-memory\\integration\\product-gates-r1\\ai-stepwise-r1\\session\\live-20261018T113851Z-e26e61eb"
+}

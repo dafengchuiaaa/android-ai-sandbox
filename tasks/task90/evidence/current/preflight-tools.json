@@ -1,0 +1,13 @@
+{
+  "offline_tests": 11,
+  "exit_code": 0,
+  "files": {
+    "tools/stepwise_session.py": "e1636f3655afc9fae345b434398fc83006d1fe811cad973db16e92a00e478056",
+    "tools/stepwise_support.py": "89d51285c36f56ede0999d60efb016e1d38614871d3187ad058258076bc32e72",
+    "tools/tests/test_stepwise_session.py": "185c7c8196ee275b0a8705a99d674e525017d82092168d4837ec4d11c236d895"
+  },
+  "session_budget_s": 360,
+  "cleanup_reserved_s": 40,
+  "max_cli_calls": 16,
+  "device_started": false
+}

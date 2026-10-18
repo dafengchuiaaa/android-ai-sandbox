@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-18",
+  "source_phone_sha256": "69b34d440e2b597b1361c6ae6410624aef2b826b2d1deb12572b97c9954bdd23",
+  "offline_stepwise_tests": 11,
+  "offline_stepwise_test_failures": 0,
+  "live_status": "launch_read_rejected_before_agent_input",
+  "elapsed_s": 86.111,
+  "session_budget_s": 360,
+  "cleanup_reserved_s": 40,
+  "model_decisions_recorded": 1,
+  "launch_calls": 1,
+  "click_calls": 0,
+  "set_text_calls": 0,
+  "collector_attempts": 2,
+  "collector_refusals": ["window_changed", "unstable_tree"],
+  "read_elapsed_s": 5.243724799998745,
+  "existing_recovery_contract_accepts": false,
+  "unknown_input_state": false,
+  "normal_stop": true,
+  "final_devices_empty": true,
+  "final_emulator_processes_empty": true,
+  "source_files_verified_unchanged": 112,
+  "ai_goal_verified": false,
+  "limits": [
+    "Maintainer summary; private raw host and command records are not redistributed.",
+    "Only the initial launch decision executed; this is not a completed multi-step AI demonstration.",
+    "Snapshot diagnosis experiment compiled offline and passed four Python compatibility checks, but was not deployed or device-tested."
+  ]
+}

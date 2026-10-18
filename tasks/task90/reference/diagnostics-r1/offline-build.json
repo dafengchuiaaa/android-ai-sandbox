@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-18",
+  "source_sha256": "188ad6933cc09c0934d36268c38d5bbec00b5d2ce479ca1e4013e7aa62b4a8d6",
+  "javac_exit_code": 0,
+  "d8_exit_code": 0,
+  "android_api": 35,
+  "java_source_target": 8,
+  "d8_min_api": 26,
+  "artifact_sha256": "96ba4c80413d78474fcb3ec0045e78f345e3425c8ba946a06ae69ceaf027b700",
+  "artifact_bytes": 4656,
+  "compatibility_tests": 4,
+  "compatibility_test_exit_code": 0,
+  "device_execution": false,
+  "installed_in_live_project": false,
+  "limits": [
+    "Compilation and Python protocol compatibility only, not Android execution.",
+    "Current main collector and its pinned JAR are unchanged."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "action": "launch",
+  "reason": "自有API35实例已通过启动器身份检查；先通过正式CLI启动唯一允许的F-Droid包，取得当前页面实际节点后再决定下一步。",
+  "observation_id": null,
+  "node_id": null,
+  "value": null,
+  "seq": 1,
+  "decision_source": "external_model",
+  "submitted_utc": "2026-10-18T11:39:43.763399+00:00",
+  "evidence_sha256": null
+}

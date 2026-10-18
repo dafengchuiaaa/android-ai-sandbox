@@ -1,0 +1,50 @@
+{
+  "status": "single_fdroid_search_ascii_and_focused_readback_verified",
+  "run": "C:\\Users\\LOCAL_USER\\Documents\\ChatGPT\\手机沙箱\\round5-memory\\integration\\task84-single-r1\\live-20261018T102038Z-27ad9363",
+  "elapsed_s": 117.35,
+  "start_calls": 1,
+  "launch_calls": 1,
+  "search_navigation_tap_confirmed": true,
+  "search_requested_node": "dc23ae585c47:R.0.0.0.0.0.0.0.0.0.1.0.1.0.0",
+  "search_clicked_ancestor": "dc23ae585c47:R.0.0.0.0.0.0.0.0.0.1.0.1",
+  "click_calls": 1,
+  "set_text_calls": 1,
+  "independent_readback_calls": 1,
+  "ascii_value": "Aurora",
+  "focused": true,
+  "field_path": "R.0.0.0.0.0.0.0.0.0.0.1.0.1.0",
+  "bounds_before": [
+    112,
+    56,
+    608,
+    168
+  ],
+  "bounds_after": [
+    112,
+    56,
+    704,
+    168
+  ],
+  "launch_failure_recovery_branch_exercised": false,
+  "preclick_mismatch_evidence_branch_exercised": false,
+  "read_calls": 10,
+  "collection_attempts": 13,
+  "recovered_reads": 3,
+  "successful_reads": 10,
+  "unique_saved_observations": 4,
+  "all_uuid_cleanup_rc_zero": true,
+  "all_command_timeouts_within_bound": true,
+  "outer_command_timeouts": 0,
+  "stopped": true,
+  "final_devices_empty": true,
+  "final_emulator_processes_empty": true,
+  "source_files_verified": 112,
+  "production_source_drift": [],
+  "production_source_modified": false,
+  "product_gates": {
+    "live_ai_demo": false,
+    "application_refresh": false,
+    "human_foreground_input": false
+  },
+  "no_input_replay": true
+}

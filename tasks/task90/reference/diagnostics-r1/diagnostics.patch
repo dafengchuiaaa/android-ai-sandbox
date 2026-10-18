@@ -1,0 +1,31 @@
+--- baseline/StableUiRead.java
++++ diagnostics/StableUiRead.java
+@@ -20,6 +20,7 @@
+     public static void main(String[] args) {
+         int rc=1;Object wrapper=null;Class<?> wc=null;boolean connected=false;File xml=null;
+         long started=SystemClock.elapsedRealtime();JSONObject report=new JSONObject();
++        JSONArray snapshotDiagnostics=new JSONArray();
+         try {
+             if(args.length!=1 || !args[0].matches("/sdcard/Download/ai-sandbox-direct-[0-9a-f]{32}\\.xml"))throw new IllegalArgumentException("invalid_owned_path");
+             xml=new File(args[0]);report.put("version",1).put("nonce",xml.getName().substring(18,50));
+@@ -50,6 +51,9 @@
+                         .invoke(null,root,xml,display.getRotation(),size.x,size.y);
+                     if(!xml.isFile() || xml.length()==0 || xml.length()>2097152)throw new IllegalStateException("invalid_xml_size");
+                     trees[i]=Files.readAllBytes(xml.toPath());
++                    snapshotDiagnostics.put(new JSONObject().put("index",i+1).put("window_id",windows[i])
++                        .put("package",packages[i]).put("sha256",hash(trees[i])).put("xml_bytes",trees[i].length)
++                        .put("taken_ms",times[i]-started).put("cache_cleared",clears.getBoolean(i)));
+                 } finally{root.recycle();}
+             }
+             if(windows[0]<0 || windows[0]!=windows[1] || !packages[0].equals(packages[1]) || packages[0].equals("null"))throw new IllegalStateException("window_changed");
+@@ -59,7 +63,9 @@
+                 .put("sha256_first",hash(trees[0])).put("sha256_second",hash(trees[1]))
+                 .put("xml_b64",Base64.encodeToString(trees[1],Base64.NO_WRAP));rc=0;
+         }catch(Throwable e){
+-            try{report.put("ok",false).put("error",String.valueOf(e)).put("cause",String.valueOf(e.getCause()));}catch(Exception ignored){}
++            try{report.put("ok",false).put("error",String.valueOf(e)).put("cause",String.valueOf(e.getCause()));
++                if(snapshotDiagnostics.length()>0)report.put("snapshot_diagnostics",snapshotDiagnostics);
++            }catch(Exception ignored){}
+         }finally{
+             if(connected)try{wc.getMethod("disconnect").invoke(wrapper);}catch(Exception e){rc=1;}
+             if(xml!=null && xml.exists() && !xml.delete())rc=1;

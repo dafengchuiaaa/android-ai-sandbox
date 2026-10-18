@@ -1,0 +1,135 @@
+{
+  "ok": false,
+  "action": "launch",
+  "data": null,
+  "error": {
+    "code": "driver_timeout",
+    "message": "Stable direct UI read failed; no input retried",
+    "detail": {
+      "backend": "stable-direct",
+      "total_timeout_s": 19.99546999999984,
+      "max_attempts": 2,
+      "attempts": [
+        {
+          "attempt": 1,
+          "nonce": "4235da15006943b2844ef24250a14e6c",
+          "commands": [
+            {
+              "args": [
+                "push",
+                "C:\\Users\\LOCAL_USER\\Documents\\Codex\\2026-10-14\\new-chat-2\\departments\\antigravity\\stable_ui_read.jar",
+                "/data/local/tmp/ai-sandbox-direct-4235da15006943b2844ef24250a14e6c.jar"
+              ],
+              "timeout_s": 8,
+              "rc": 0,
+              "stderr": "C:\\Users\\LOCAL_USER\\Documents\\Codex\\2026-10-14\\new-chat-2\\departments\\antigravity\\stable_ui_read.jar: 1 file pushed, 0 skipped. 21.0 MB/s (4258 bytes in 0.000s)\r\n"
+            },
+            {
+              "args": [
+                "shell",
+                "sha256sum",
+                "/data/local/tmp/ai-sandbox-direct-4235da15006943b2844ef24250a14e6c.jar"
+              ],
+              "timeout_s": 8,
+              "rc": 0,
+              "stderr": ""
+            },
+            {
+              "args": [
+                "shell",
+                "timeout",
+                "-s",
+                "KILL",
+                "7",
+                "env",
+                "CLASSPATH=/data/local/tmp/ai-sandbox-direct-4235da15006943b2844ef24250a14e6c.jar:/system/framework/uiautomator.jar",
+                "app_process",
+                "/system/bin",
+                "StableUiRead",
+                "/sdcard/Download/ai-sandbox-direct-4235da15006943b2844ef24250a14e6c.xml"
+              ],
+              "timeout_s": 8,
+              "rc": 1,
+              "stderr": "",
+              "failure_stdout": "{\"version\":1,\"nonce\":\"4235da15006943b2844ef24250a14e6c\",\"idle_result\":\"short_idle_reached\",\"ok\":false,\"error\":\"java.lang.IllegalStateException: window_changed\",\"cause\":\"null\",\"elapsed_ms\":2084}\r\n"
+            },
+            {
+              "args": [
+                "shell",
+                "rm",
+                "-f",
+                "/data/local/tmp/ai-sandbox-direct-4235da15006943b2844ef24250a14e6c.jar",
+                "/sdcard/Download/ai-sandbox-direct-4235da15006943b2844ef24250a14e6c.xml"
+              ],
+              "timeout_s": 2,
+              "rc": 0,
+              "stderr": ""
+            }
+          ],
+          "failure": "command failed: 1 "
+        },
+        {
+          "attempt": 2,
+          "nonce": "fb050f9dad69403890183f938c9bf7a8",
+          "commands": [
+            {
+              "args": [
+                "push",
+                "C:\\Users\\LOCAL_USER\\Documents\\Codex\\2026-10-14\\new-chat-2\\departments\\antigravity\\stable_ui_read.jar",
+                "/data/local/tmp/ai-sandbox-direct-fb050f9dad69403890183f938c9bf7a8.jar"
+              ],
+              "timeout_s": 8,
+              "rc": 0,
+              "stderr": "C:\\Users\\LOCAL_USER\\Documents\\Codex\\2026-10-14\\new-chat-2\\departments\\antigravity\\stable_ui_read.jar: 1 file pushed, 0 skipped. 21.6 MB/s (4258 bytes in 0.000s)\r\n"
+            },
+            {
+              "args": [
+                "shell",
+                "sha256sum",
+                "/data/local/tmp/ai-sandbox-direct-fb050f9dad69403890183f938c9bf7a8.jar"
+              ],
+              "timeout_s": 8,
+              "rc": 0,
+              "stderr": ""
+            },
+            {
+              "args": [
+                "shell",
+                "timeout",
+                "-s",
+                "KILL",
+                "7",
+                "env",
+                "CLASSPATH=/data/local/tmp/ai-sandbox-direct-fb050f9dad69403890183f938c9bf7a8.jar:/system/framework/uiautomator.jar",
+                "app_process",
+                "/system/bin",
+                "StableUiRead",
+                "/sdcard/Download/ai-sandbox-direct-fb050f9dad69403890183f938c9bf7a8.xml"
+              ],
+              "timeout_s": 8,
+              "rc": 1,
+              "stderr": "",
+              "failure_stdout": "{\"version\":1,\"nonce\":\"fb050f9dad69403890183f938c9bf7a8\",\"idle_result\":\"short_idle_reached\",\"ok\":false,\"error\":\"java.lang.IllegalStateException: unstable_tree\",\"cause\":\"null\",\"elapsed_ms\":1620}\r\n"
+            },
+            {
+              "args": [
+                "shell",
+                "rm",
+                "-f",
+                "/data/local/tmp/ai-sandbox-direct-fb050f9dad69403890183f938c9bf7a8.jar",
+                "/sdcard/Download/ai-sandbox-direct-fb050f9dad69403890183f938c9bf7a8.xml"
+              ],
+              "timeout_s": 2,
+              "rc": 0,
+              "stderr": ""
+            }
+          ],
+          "failure": "command failed: 1 "
+        }
+      ],
+      "elapsed_s": 5.243724799998745,
+      "ok": false
+    }
+  },
+  "artifacts": []
+}

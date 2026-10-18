@@ -1,0 +1,7 @@
+警告: [options] 未与 -source 8 一起?置引??路径
+警告: [options] 源? 8 已??，将在未来?行版中?除
+警告: [options] 目?? 8 已??，将在未来?行版中?除
+警告: [options] 要?藏有?已????的警告, ?使用 -Xlint:-options。
+注: C:\Users\LOCAL_USER\Documents\ChatGPT\手机沙箱\opensource\android-ai-sandbox\experiments\reader-failure-diagnostics\StableUiRead.java使用或覆盖了已??的 API。
+注: 有???信息, ?使用 -Xlint:deprecation 重新??。
+4 个警告

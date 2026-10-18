@@ -1,0 +1,26 @@
+{
+  "recoverable_by_existing_task84_contract": false,
+  "detail": {
+    "recoverable": false,
+    "classification": "non_recoverable_launch_failure",
+    "monkey_launch_inferred_rc_zero": false,
+    "outer_command_timed_out": false,
+    "outer_exit_code": 1,
+    "outer_elapsed_s": 7.024,
+    "trace_elapsed_s": 5.243724799998745,
+    "attempts": 2,
+    "nonces": [
+      "4235da15006943b2844ef24250a14e6c",
+      "fb050f9dad69403890183f938c9bf7a8"
+    ],
+    "collector_errors": [
+      "java.lang.IllegalStateException: window_changed"
+    ],
+    "all_uuid_cleanup_rc_zero": true,
+    "max_device_command_timeout_s": 8,
+    "reasons": [
+      "attempt_2_disallowed_collector_error:'java.lang.IllegalStateException: unstable_tree'"
+    ],
+    "known_evidence_gap": "Frozen StableUiRead.java reports java.lang.IllegalStateException: window_changed without emitting the two snapshots' individual window_id/package values on failure; recovery requires a subsequent independent full-tree stable-direct observation of org.fdroid.basic."
+  }
+}

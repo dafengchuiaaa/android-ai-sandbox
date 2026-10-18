@@ -1,0 +1,52 @@
+[
+  {
+    "label": "javac",
+    "argv": [
+      "D:\\AI\\adnroid\\jbr\\bin\\javac.exe",
+      "-encoding",
+      "UTF-8",
+      "-source",
+      "8",
+      "-target",
+      "8",
+      "-classpath",
+      "C:\\Users\\LOCAL_USER\\AppData\\Local\\Android\\Sdk\\platforms\\android-35\\android.jar",
+      "-d",
+      "C:\\Users\\LOCAL_USER\\Documents\\ChatGPT\\手机沙箱\\round5-memory\\integration\\product-gates-r1\\reader-diagnostics-r1\\build\\classes",
+      "C:\\Users\\LOCAL_USER\\Documents\\ChatGPT\\手机沙箱\\opensource\\android-ai-sandbox\\experiments\\reader-failure-diagnostics\\StableUiRead.java"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "d8",
+    "argv": [
+      "D:\\AI\\adnroid\\jbr\\bin\\java.exe",
+      "-cp",
+      "C:\\Users\\LOCAL_USER\\AppData\\Local\\Android\\Sdk\\build-tools\\34.0.0\\lib\\d8.jar",
+      "com.android.tools.r8.D8",
+      "--lib",
+      "C:\\Users\\LOCAL_USER\\AppData\\Local\\Android\\Sdk\\platforms\\android-35\\android.jar",
+      "--min-api",
+      "26",
+      "--output",
+      "C:\\Users\\LOCAL_USER\\Documents\\ChatGPT\\手机沙箱\\round5-memory\\integration\\product-gates-r1\\reader-diagnostics-r1\\build\\dex",
+      "C:\\Users\\LOCAL_USER\\Documents\\ChatGPT\\手机沙箱\\round5-memory\\integration\\product-gates-r1\\reader-diagnostics-r1\\build\\classes\\StableUiRead.class"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "compat-tests",
+    "argv": [
+      "C:\\Users\\LOCAL_USER\\.workbuddy\\binaries\\python\\envs\\default\\Scripts\\python.exe",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "experiments/reader-failure-diagnostics",
+      "-p",
+      "test_diagnostics_compat.py",
+      "-v"
+    ],
+    "exit_code": 0
+  }
+]

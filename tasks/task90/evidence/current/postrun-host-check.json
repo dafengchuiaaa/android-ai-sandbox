@@ -1,0 +1,10 @@
+{
+  "checked_at_utc": "2026-10-18T11:48:39.5431775Z",
+  "adb_exit_code": 0,
+  "adb_devices": [
+    "List of devices attached",
+    ""
+  ],
+  "emulator_processes": [],
+  "session_worker_processes": []
+}

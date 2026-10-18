@@ -1,0 +1,25 @@
+{
+  "status": "launch_read_rejected_before_agent_input",
+  "elapsed_s": 86.111,
+  "started_utc": "2026-10-18T11:38:51.225084+00:00",
+  "ended_utc": "2026-10-18T11:40:17.334396+00:00",
+  "collector_refusals": [
+    "java.lang.IllegalStateException: window_changed",
+    "java.lang.IllegalStateException: unstable_tree"
+  ],
+  "read_elapsed_s": 5.243724799998745,
+  "collector_attempts": 2,
+  "search_clicks": 0,
+  "set_text_calls": 0,
+  "all_uuid_cleanup_rc_zero": true,
+  "outer_timeouts": 0,
+  "existing_recovery_contract_rejects": true,
+  "normal_stop": true,
+  "final_devices_empty": true,
+  "final_emulator_processes_empty": true,
+  "source_files_verified_unchanged": 112,
+  "tool_hashes_unchanged_during_run": true,
+  "model_decisions_recorded": 1,
+  "ai_goal_verified": false,
+  "next_step": "Add failure-only snapshot diagnostics offline; do not broaden recovery or replay session."
+}

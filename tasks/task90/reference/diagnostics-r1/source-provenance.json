@@ -1,0 +1,7 @@
+{
+  "baseline_source_sha256": "da85850891beeb80201475beabf91854f0aca82ae49356f07db3c0d64b70066f",
+  "candidate_source_sha256": "188ad6933cc09c0934d36268c38d5bbec00b5d2ce479ca1e4013e7aa62b4a8d6",
+  "changes": "Failure reports include up to two snapshot metadata records; no XML/text values added. Guards, read counts, sleeps, rc and cleanup unchanged.",
+  "installed_in_live_project": false,
+  "live_verified": false
+}

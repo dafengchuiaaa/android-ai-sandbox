@@ -1,0 +1,9 @@
+test_diagnostic_hashes_cannot_override_authoritative_mismatch (test_diagnostics_compat.DiagnosticsCompatibility.test_diagnostic_hashes_cannot_override_authoritative_mismatch) ... ok
+test_existing_success_contract_remains_compatible (test_diagnostics_compat.DiagnosticsCompatibility.test_existing_success_contract_remains_compatible) ... ok
+test_refusal_stays_refusal_despite_matching_metadata (test_diagnostics_compat.DiagnosticsCompatibility.test_refusal_stays_refusal_despite_matching_metadata) ... ok
+test_two_metadata_records_fit_existing_failure_stdout_bound (test_diagnostics_compat.DiagnosticsCompatibility.test_two_metadata_records_fit_existing_failure_stdout_bound) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK
