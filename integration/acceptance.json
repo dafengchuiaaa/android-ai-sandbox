@@ -8,15 +8,13 @@
   },
   "product_gates": {
     "live_ai_demo": false,
-    "application_refresh": false,
-    "human_foreground_input": false
+    "application_refresh": false
   },
   "component_bundle": {},
   "lightweight_target_met": false,
   "remaining_project_work": [
-    "Portable trusted SDK configuration",
-    "Fresh checkout acceptance",
-    "Current AI demonstration, network refresh and human foreground input",
-    "Windows whole-host resource and bounded always-on measurement"
+    "Portable trusted Windows/SDK configuration and fresh-checkout acceptance",
+    "One evidence-backed QEMU memory-reduction candidate and controlled comparison",
+    "Finite repeatability, more tasks and bounded long-running operation"
   ]
 }

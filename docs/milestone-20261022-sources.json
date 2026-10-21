@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-22",
+  "scope": "Curated code exports; not a production receipt or portable installation manifest",
+  "files": [
+    {
+      "path": "tools/stepwise_session.py",
+      "source_role": "current-maintained-worker",
+      "development_sha256": "13d0c80ac2411f7912c89e20a22660b38a13db77db5403f0113d0702e7bec775",
+      "export_sha256": "13d0c80ac2411f7912c89e20a22660b38a13db77db5403f0113d0702e7bec775",
+      "bytes": 80118,
+      "transform": "Local account-name placeholders substituted where present; UTF-8 BOM removed for text"
+    },
+    {
+      "path": "tools/stepwise_support.py",
+      "source_role": "current-maintained-worker",
+      "development_sha256": "e395a5058b19e9a35a5f5918bc08760b977e3026644a0284d2f6fb5dc8004a19",
+      "export_sha256": "e395a5058b19e9a35a5f5918bc08760b977e3026644a0284d2f6fb5dc8004a19",
+      "bytes": 39614,
+      "transform": "Local account-name placeholders substituted where present; UTF-8 BOM removed for text"
+    },
+    {
+      "path": "tools/tests/test_stepwise_session.py",
+      "source_role": "current-maintained-worker",
+      "development_sha256": "38cb1d49729f2561e3eb9e5618becc6ed9400a7e2d3f7647b72be04e31b2fee8",
+      "export_sha256": "38cb1d49729f2561e3eb9e5618becc6ed9400a7e2d3f7647b72be04e31b2fee8",
+      "bytes": 62496,
+      "transform": "Local account-name placeholders substituted where present; UTF-8 BOM removed for text"
+    },
+    {
+      "path": "departments/antigravity/phone.py",
+      "source_role": "frozen-task105-components-used-in-scoped-live-runs",
+      "development_sha256": "3754079d15c2e5991d7c47e712aeb024d8fe97697aa603c93afe974bd9cbc47f",
+      "export_sha256": "3754079d15c2e5991d7c47e712aeb024d8fe97697aa603c93afe974bd9cbc47f",
+      "bytes": 71725,
+      "transform": "Local account-name placeholders substituted where present; UTF-8 BOM removed for text"
+    },
+    {
+      "path": "departments/antigravity/stable_ui_read.py",
+      "source_role": "frozen-task105-components-used-in-scoped-live-runs",
+      "development_sha256": "b12379feffa64aff7d4d771b613627e5dc809e5e3911636fba4329d13c473f56",
+      "export_sha256": "b12379feffa64aff7d4d771b613627e5dc809e5e3911636fba4329d13c473f56",
+      "bytes": 19294,
+      "transform": "Local account-name placeholders substituted where present; UTF-8 BOM removed for text"
+    },
+    {
+      "path": "departments/antigravity/StableUiRead.java",
+      "source_role": "frozen-task105-components-used-in-scoped-live-runs",
+      "development_sha256": "c73ead4bb038915f563c5fe9afff4452e32284761639c5a92a493a7f2b6d77c6",
+      "export_sha256": "c73ead4bb038915f563c5fe9afff4452e32284761639c5a92a493a7f2b6d77c6",
+      "bytes": 15739,
+      "transform": "Local account-name placeholders substituted where present; UTF-8 BOM removed for text"
+    },
+    {
+      "path": "departments/antigravity/UiTreeDiff.java",
+      "source_role": "frozen-task105-components-used-in-scoped-live-runs",
+      "development_sha256": "aa446cc308c62d83af361a852495ae2664ee0db92107acdc4e8e59a400ff96f3",
+      "export_sha256": "aa446cc308c62d83af361a852495ae2664ee0db92107acdc4e8e59a400ff96f3",
+      "bytes": 31913,
+      "transform": "Local account-name placeholders substituted where present; UTF-8 BOM removed for text"
+    },
+    {
+      "path": "departments/antigravity/stable_ui_read.jar",
+      "source_role": "frozen-task105-components-used-in-scoped-live-runs",
+      "development_sha256": "714dd8c8bc02b6b1be49c3748942685334bb8e6805278ac5432b1207baf80b77",
+      "export_sha256": "714dd8c8bc02b6b1be49c3748942685334bb8e6805278ac5432b1207baf80b77",
+      "bytes": 16442,
+      "transform": "Local account-name placeholders substituted where present; UTF-8 BOM removed for text"
+    },
+    {
+      "path": "experiments/host-supervisor/session_supervisor.py",
+      "source_role": "current-host-reference-snapshot",
+      "development_sha256": "c274632652a798b0e290f628c9768c5c6a07371ffe20f88c4cd3bf085e46aaae",
+      "export_sha256": "0f2f50f5497fd61f53e088bb77875c57916c6c9e5cf61f947ba4e724fe220277",
+      "bytes": 96999,
+      "transform": "Local account-name placeholders substituted where present; UTF-8 BOM removed for text"
+    },
+    {
+      "path": "experiments/host-supervisor/inspect_turnaround.py",
+      "source_role": "current-host-reference-snapshot",
+      "development_sha256": "c03ed68f113a6efa8058def147ea42cf67b1f32ca2593761fd0f8c3d5584f1c0",
+      "export_sha256": "eee980daaa7eb08061de6dd80de868b964fd6f0d0424cb9a0f9c30239ae4acad",
+      "bytes": 62361,
+      "transform": "Local account-name placeholders substituted where present; UTF-8 BOM removed for text; whitespace-only lines trimmed"
+    },
+    {
+      "path": "experiments/host-resources/sampler.py",
+      "source_role": "task112-read-only-observer",
+      "development_sha256": "5c06346627bc941ee9fdc994e30af70086a7a39b13d245117b04de0d1960521e",
+      "export_sha256": "5c06346627bc941ee9fdc994e30af70086a7a39b13d245117b04de0d1960521e",
+      "bytes": 42767,
+      "transform": "Local account-name placeholders substituted where present; UTF-8 BOM removed for text"
+    }
+  ]
+}

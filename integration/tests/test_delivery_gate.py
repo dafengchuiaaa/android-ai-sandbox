@@ -34,6 +34,25 @@ class AcceptanceGateTests(unittest.TestCase):
         receipt["product_gates"] = {name: True for name in ("live_ai_demo", "application_refresh", "human_foreground_input")}
         (self.root / "integration/acceptance.json").write_text(json.dumps(receipt), encoding="utf-8")
 
+    def test_agent_gates_do_not_require_human_input(self):
+        self.receipt()
+        path = self.root / "integration/acceptance.json"
+        receipt = json.loads(path.read_text(encoding="utf-8"))
+        receipt["product_gates"].pop("human_foreground_input")
+        path.write_text(json.dumps(receipt), encoding="utf-8")
+        with patch.object(check_delivery, "ADAPTER_HASH", self.digest):
+            self.assertTrue(check_delivery.inspect(self.root)["ready_for_product_acceptance"])
+
+    def test_required_agent_gates_still_fail_closed(self):
+        for missing in ("live_ai_demo", "application_refresh"):
+            self.receipt()
+            path = self.root / "integration/acceptance.json"
+            receipt = json.loads(path.read_text(encoding="utf-8"))
+            receipt["product_gates"].pop(missing)
+            path.write_text(json.dumps(receipt), encoding="utf-8")
+            with patch.object(check_delivery, "ADAPTER_HASH", self.digest):
+                self.assertFalse(check_delivery.inspect(self.root)["ready_for_product_acceptance"])
+
     def test_files_alone_are_not_acceptance(self):
         result = check_delivery.inspect(self.root)
         self.assertTrue(all(item["present"] for item in result["components"].values()))

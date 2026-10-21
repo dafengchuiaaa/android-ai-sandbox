@@ -433,50 +433,57 @@ def classify_launch_post_read_recovery(
 def is_fdroid_ready(obs_data: Optional[Dict[str, Any]]) -> Tuple[bool, str]:
     """Strictly evaluates whether an observation demonstrates that org.fdroid.basic is ready.
 
-    Rejects:
+    Rejects, in this order:
     - None or empty observation dictionary
-    - Package other than org.fdroid.basic (e.g. com.google.android.permissioncontroller)
-    - Root-only or minimal partial tree without legitimate content
-    - Main container with 0-height or invalid bounds
-    Accepts:
-    - Contains legitimate org.fdroid.basic nodes with valid bounds, having either
-      an enabled EditText or a Search semantic entry.
+    - Node list containing entries that are not objects
+    - No package attributed to any node (e.g. a bare <hierarchy> wrapper, package=null)
+    - No node from org.fdroid.basic (the foreign packages are named in the reason)
+    - Fewer than 3 target nodes, or no target node with usable bounds
+    - Target window present but its Search/EditText surface has no usable bounds, i.e.
+      the surface is in the tree but not rendered (parse_bounds yields None for
+      zero-height, zero-width, reversed or malformed bounds)
+    Accepts only a rendered (bounds_valid) enabled EditText or Search semantic entry in
+    the target package.
+
+    Readiness is decision information only. It never relaxes the input contract: every
+    click/set-text is still validated against the latest full observation.
     """
     if not isinstance(obs_data, dict):
         return False, "observation_not_dict"
     nodes = obs_data.get("nodes")
     if not isinstance(nodes, list) or not nodes:
         return False, "empty_nodes"
+    if not all(isinstance(n, dict) for n in nodes):
+        return False, "malformed_nodes"
 
+    observed_packages = sorted({n.get("package") for n in nodes if n.get("package")})
     fdroid_nodes = [n for n in nodes if n.get("package") == TARGET_PACKAGE]
     if not fdroid_nodes:
-        pkgs = sorted(list({n.get("package") for n in nodes if n.get("package")}))
-        return False, f"foreign_package: {pkgs or 'none'}"
+        if not observed_packages:
+            return False, "no_package_in_observation"
+        return False, f"foreign_package: {observed_packages}"
 
     if len(fdroid_nodes) < 3:
         return False, f"insufficient_fdroid_nodes: {len(fdroid_nodes)}"
 
-    # Check for valid bounds on containers
-    valid_bounds_count = sum(1 for n in fdroid_nodes if n.get("bounds_valid") is True)
-    if valid_bounds_count == 0:
+    # A window whose every target node has unusable bounds is not laid out at all.
+    if not any(n.get("bounds_valid") is True for n in fdroid_nodes):
         return False, "no_valid_bounds_in_package"
 
-    # Check for presence of either Search entry or EditText
-    has_edit_text = any(
-        n.get("package") == TARGET_PACKAGE
-        and (n.get("class") or "").endswith("EditText")
-        and n.get("enabled") is True
-        for n in nodes
-    )
-    has_search_entry = any(
-        n.get("package") == TARGET_PACKAGE
-        and n.get("enabled") is True
-        and ((n.get("text") or "").casefold() == "search" or (n.get("content_desc") or "").casefold() == "search")
-        for n in nodes
-    )
-
-    if has_edit_text or has_search_entry:
+    surface = [
+        n for n in fdroid_nodes
+        if n.get("enabled") is True and (
+            (n.get("class") or "").endswith("EditText")
+            or (n.get("text") or "").casefold() == "search"
+            or (n.get("content_desc") or "").casefold() == "search"
+        )
+    ]
+    # The surface itself must be rendered. Other target nodes having valid bounds does
+    # not prove that the field/label the caller would act on is on screen.
+    if any(n.get("bounds_valid") is True for n in surface):
         return True, "fdroid_interactive_surface_ready"
+    if surface:
+        return False, "interactive_surface_not_rendered"
 
     return False, "fdroid_nodes_present_but_no_search_or_edit_surface"
 

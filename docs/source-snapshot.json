@@ -333,5 +333,6 @@
       "bytes": 7394,
       "source": "reviewed-development-snapshot"
     }
-  ]
+  ],
+  "scope": "Historical 2026-10-18 snapshot; current milestone source bindings: milestone-20261022-sources.json"
 }

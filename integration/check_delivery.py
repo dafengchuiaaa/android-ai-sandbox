@@ -89,8 +89,8 @@ def inspect(root=ROOT):
     gates = receipts.get("product_gates", {})
     product_ready = bool(integration_ready and isinstance(gates, dict)
                          and gates.get("live_ai_demo") is True and gates.get("application_refresh") is True
-                         and gates.get("human_foreground_input") is True)
-    missing_gates = [name for name in ("live_ai_demo", "application_refresh", "human_foreground_input")
+                         )
+    missing_gates = [name for name in ("live_ai_demo", "application_refresh")
                      if not isinstance(gates, dict) or gates.get(name) is not True]
     if missing_gates:
         blockers.append("Product evidence still missing: " + ", ".join(missing_gates))

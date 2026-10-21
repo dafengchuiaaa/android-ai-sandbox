@@ -64,8 +64,8 @@ CLI_VERSION = "0.1.3-codex-r4profile"
 EXPECTED_AVD = profiles.default().avd
 ALLOWED_PACKAGE = "org.fdroid.basic"
 ALLOWED_PACKAGES = (ALLOWED_PACKAGE, "com.android.settings")
-DIRECT_READER_PY_SHA256 = "4f5984bf2713d2346b21e993a5f2496efae10539654b65570347b3fb446a5bae"
-DIRECT_READER_JAR_SHA256 = "e78ed078885c3bab594b8db86dc369bdbccd1f217f66f0c475a398bc52aca521"
+DIRECT_READER_PY_SHA256 = "b12379feffa64aff7d4d771b613627e5dc809e5e3911636fba4329d13c473f56"
+DIRECT_READER_JAR_SHA256 = "714dd8c8bc02b6b1be49c3748942685334bb8e6805278ac5432b1207baf80b77"
 SERIAL_RE = re.compile(r"^emulator-(\d{1,5})$")
 TEXT_RE = re.compile(r"^[A-Za-z0-9]{0,200}$")
 # Clear budget for the ASCII[0-200] contract.  cmd_set_text refuses any existing
@@ -454,7 +454,7 @@ class PhoneController:
                             "profile_id": self.profile_id},
                 )
 
-    def dump_hierarchy_bytes(self, total_timeout: float = DUMP_TOTAL_TIMEOUT_S) -> Tuple[bytes, str]:
+    def dump_hierarchy_bytes(self, total_timeout: float = DUMP_TOTAL_TIMEOUT_S, is_launch: bool = False) -> Tuple[bytes, str]:
         """Dump UIAutomator hierarchy to remote temp file and read bytes.
 
         Performs at most 2 read-only collection attempts with bounded timeouts,
@@ -475,7 +475,8 @@ class PhoneController:
                 module = importlib.util.module_from_spec(spec)
                 spec.loader.exec_module(module)
                 data, evidence = module.collect(self.adb, jar_path, DIRECT_READER_JAR_SHA256,
-                                               self.output_dir, total_timeout - (time.monotonic() - read_started))
+                                                self.output_dir, total_timeout - (time.monotonic() - read_started),
+                                                is_launch=is_launch)
             except PhoneError:
                 raise
             except Exception as exc:
@@ -802,11 +803,11 @@ class PhoneController:
             )
         return obs, meta
 
-    def observe_live(self) -> Tuple[Dict[str, Any], str]:
+    def observe_live(self, is_launch: bool = False) -> Tuple[Dict[str, Any], str]:
         """Perform full live observe: dump, parse, persist, and return contract data."""
         self.verify_live_device()
         observed_at = datetime.now(timezone.utc).isoformat()
-        xml_bytes, _ = self.dump_hierarchy_bytes()
+        xml_bytes, _ = self.dump_hierarchy_bytes(is_launch=is_launch)
         obs, abs_xml_path, _ = self.save_observation(xml_bytes, observed_at)
 
         data = {
@@ -844,23 +845,66 @@ class PhoneController:
                 detail={"package": package, "allowed_packages": list(ALLOWED_PACKAGES)},
             )
         self.verify_live_device()
-        # Launch using monkey launcher intent
-        rc, out, err = self.adb.run([
-            "shell", "monkey", "-p", package, "-c", "android.intent.category.LAUNCHER", "1"
-        ])
+        # Launch using monkey launcher intent with host monotonic timing recording
+        monkey_t0 = time.monotonic()
+        monkey_t1 = None
+        rc = -1
+        out = ""
+        err = ""
+        adb_exc = None
+        try:
+            rc, out, err = self.adb.run([
+                "shell", "monkey", "-p", package, "-c", "android.intent.category.LAUNCHER", "1"
+            ])
+            monkey_t1 = time.monotonic()
+        except Exception as exc:
+            monkey_t1 = time.monotonic()
+            adb_exc = exc
+            err = str(exc)
+        finally:
+            if monkey_t1 is None:
+                monkey_t1 = time.monotonic()
+            self.latest_launch_monkey = {
+                "start_monotonic": monkey_t0,
+                "end_monotonic": monkey_t1,
+                "elapsed_s": round(monkey_t1 - monkey_t0, 4),
+                "rc": rc,
+                "exception": repr(adb_exc) if adb_exc is not None else None,
+            }
+        if adb_exc is not None:
+            if isinstance(adb_exc, adb_control.AdbNotFound):
+                raise PhoneError("device_unavailable", str(adb_exc),
+                                 detail={"monkey_telemetry": self.latest_launch_monkey}) from adb_exc
+            elif isinstance(adb_exc, (adb_control.AdbTimeout, adb_control.AdbError)):
+                raise PhoneError("driver_timeout", str(adb_exc),
+                                 detail={"monkey_telemetry": self.latest_launch_monkey}) from adb_exc
+            elif isinstance(adb_exc, PhoneError):
+                if isinstance(adb_exc.detail, dict):
+                    adb_exc.detail.setdefault("monkey_telemetry", self.latest_launch_monkey)
+                raise adb_exc
+            else:
+                raise PhoneError("verification_failed", f"Unexpected failure: {adb_exc}",
+                                 detail={"monkey_telemetry": self.latest_launch_monkey}) from adb_exc
         if rc != 0:
-            raise PhoneError("driver_timeout", f"Failed to launch {package}: {err.strip() or out.strip()}")
+            raise PhoneError("driver_timeout", f"Failed to launch {package}: {err.strip() or out.strip()}",
+                             detail={"monkey_telemetry": self.latest_launch_monkey})
 
-        # Observe screen after launch
-        after_obs_data, xml_path = self.observe_live()
+        # Observe screen after launch with launch pacing enabled
+        try:
+            after_obs_data, xml_path = self.observe_live(is_launch=True)
+        except PhoneError as exc:
+            if hasattr(self, "latest_launch_monkey") and isinstance(exc.detail, dict):
+                exc.detail["monkey_telemetry"] = self.latest_launch_monkey
+            raise
         data = {
             "package": package,
             "after_observation": after_obs_data,
+            "monkey_telemetry": self.latest_launch_monkey,
         }
         return data, [xml_path]
 
     def cmd_observe(self) -> Tuple[Dict[str, Any], List[str]]:
-        data, xml_path = self.observe_live()
+        data, xml_path = self.observe_live(is_launch=False)
         return data, [xml_path]
 
     def cmd_click(self, observation_id: str, node_id: str) -> Tuple[Dict[str, Any], List[str]]:
