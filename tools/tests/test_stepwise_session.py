@@ -1144,5 +1144,139 @@ class ApplicationRefreshPolicyTests(unittest.TestCase):
             self.assertFalse(p_input.require_raw_log_file)
 
 
+@unittest.skipUnless(os.name == 'nt', 'Windows-only launcher/host checks')
+class OptionalLowRamTests(unittest.TestCase):
+    """Offline only: mock lifecycle boundaries, never start a device or worker."""
+
+    def test_worker_cli_defaults_and_opt_in(self):
+        import contextlib
+        import io
+        for flags, expected in (([], False), (['--low-ram'], True)):
+            with self.subTest(flags=flags), patch.object(m, 'begin', return_value={}) as begin:
+                with contextlib.redirect_stdout(io.StringIO()):
+                    m.main(['begin', '--project-root', '.', '--adb', 'adb.exe',
+                            '--manifest', 'manifest.json', '--out', 'unused'] + flags)
+                self.assertIs(begin.call_args.args[0].low_ram, expected)
+
+    def test_begin_persists_boolean_without_spawning(self):
+        from types import SimpleNamespace
+        for value in (None, False, True):
+            with self.subTest(value=value), tempfile.TemporaryDirectory() as tmp:
+                args = SimpleNamespace(project_root=tmp, out=str(Path(tmp) / 'session'),
+                                       adb='adb.exe', manifest=['manifest.json'])
+                if value is not None:
+                    args.low_ram = value
+                with patch.object(m, 'verify_files', return_value=1), \
+                     patch.object(m.subprocess, 'Popen', return_value=SimpleNamespace(pid=123)) as spawn:
+                    m.begin(args)
+                self.assertIs(m.load(Path(args.out) / 'config.json')['low_ram'], value is True)
+                spawn.assert_called_once()
+        with patch.object(m, 'verify_files') as verify:
+            with self.assertRaisesRegex(ValueError, 'low_ram must be a boolean'):
+                m.begin(SimpleNamespace(low_ram='false'))
+            verify.assert_not_called()
+
+    def test_serve_start_argv_default_and_opt_in(self):
+        from types import SimpleNamespace
+        for value in (None, False, True):
+            with self.subTest(value=value), tempfile.TemporaryDirectory() as tmp:
+                out = Path(tmp)
+                cfg = dict(project_root=tmp, manifests=['manifest.json'], python=sys.executable,
+                           adb='adb.exe', tool_hashes={})
+                if value is not None:
+                    cfg['low_ram'] = value
+                m.save(out / 'config.json', cfg)
+                runner = SimpleNamespace(python_exe=Path(sys.executable), powershell_exe='powershell.exe',
+                    launcher_script=out / 'launcher.ps1', state_file=out / 'state.json',
+                    session_dir=out, run_dir=out, start_time=0.0,
+                    verify_manifest=lambda *_: None, check_preflight_absent=lambda *_: None)
+                calls = []
+                def execute(label, argv, **kwargs):
+                    calls.append((label, argv, kwargs))
+                    if label == 'bundle-check':
+                        return '{"ready_for_device_integration": true}'
+                    raise RuntimeError('offline stop before launcher execution')
+                runner.execute_cmd = execute
+                with patch.object(m, 'verify_files'), patch.object(m, 'Session', return_value=runner), \
+                     patch.object(m, 'handle_session_failure') as failure, \
+                     patch.object(m, 'perform_session_cleanup') as cleanup:
+                    self.assertEqual(m.serve(out), 1)
+                expected = ['powershell.exe', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File',
+                            str(runner.launcher_script), '-StateFile', str(runner.state_file),
+                            '-BootTimeoutSec', '120', '-NativeTimeoutSec', '8']
+                self.assertEqual(calls[-1], ('start', expected + (['-LowRam'] if value else []), {'timeout': 140}))
+                failure.assert_called_once()
+                cleanup.assert_called_once()
+
+    def test_serve_rejects_non_boolean_before_session(self):
+        with tempfile.TemporaryDirectory() as tmp, patch.object(m, 'Session') as session:
+            out = Path(tmp)
+            m.save(out / 'config.json', {'low_ram': 'false'})
+            with self.assertRaisesRegex(ValueError, 'low_ram must be a boolean'):
+                m.serve(out)
+            session.assert_not_called()
+
+    def test_supervisor_propagation_and_cli(self):
+        sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'experiments/host-supervisor'))
+        import session_supervisor as supervisor
+        with tempfile.TemporaryDirectory() as tmp:
+            normal = supervisor.Task101Supervisor(task_dir=Path(tmp))
+            enabled = supervisor.Task101Supervisor(task_dir=Path(tmp), low_ram=True)
+            enabled.session_id = normal.session_id
+            self.assertEqual(enabled.build_worker_begin_cmd(), normal.build_worker_begin_cmd() + ['--low-ram'])
+            self.assertNotIn('--low-ram', normal.build_worker_begin_cmd())
+            with self.assertRaisesRegex(ValueError, 'low_ram must be a boolean'):
+                supervisor.Task101Supervisor(task_dir=Path(tmp), low_ram='false')
+        for flags, expected in (([], False), (['--low-ram'], True)):
+            with patch.object(supervisor, 'Task101Supervisor') as cls:
+                cls.return_value.run.return_value = 0
+                self.assertEqual(supervisor.main(['run'] + flags), 0)
+                self.assertIs(cls.call_args.kwargs['low_ram'], expected)
+
+    def test_launcher_ast_arguments_and_boot_only_binding(self):
+        import subprocess
+        launcher = Path(__file__).resolve().parents[2] / 'departments/workbuddy/round4-launcher/start-api35.ps1'
+        # Parse the real source; execute only its argument expressions and param block.
+        # Never dot-source or invoke the launcher body (no preflight, process, or ADB).
+        script = r'''
+$ErrorActionPreference = 'Stop'
+$tokens = $null; $parseErrors = $null
+$ast = [System.Management.Automation.Language.Parser]::ParseFile($env:LOWRAM_TEST_LAUNCHER, [ref]$tokens, [ref]$parseErrors)
+if ($parseErrors.Count) { throw ($parseErrors | Out-String) }
+$assign = @($ast.EndBlock.Statements | Where-Object {
+    $_ -is [System.Management.Automation.Language.AssignmentStatementAst] -and
+    $_.Left.Extent.Text -eq '$emuArgs'
+})
+if ($assign.Count -ne 1) { throw 'expected one emuArgs assignment' }
+$index = [Array]::IndexOf($ast.EndBlock.Statements, $assign[0])
+$conditional = $ast.EndBlock.Statements[$index + 1]
+if ($conditional -isnot [System.Management.Automation.Language.IfStatementAst] -or
+    $conditional.Clauses[0].Item1.Extent.Text -ne '$LowRam') { throw 'missing opt-in conditional' }
+$argsOnly = [scriptblock]::Create('param([bool]$LowRam) $AvdName="ai-sandbox-api35-google"; $Port=5556; ' +
+    $assign[0].Extent.Text + '; ' + $conditional.Extent.Text + '; return $emuArgs')
+Invoke-Expression ('function Test-LowRamBinding { [CmdletBinding(DefaultParameterSetName="Boot")] ' +
+    $ast.ParamBlock.Extent.Text + '; return "bound" }')
+$boot = Test-LowRamBinding -LowRam
+$stopRejected = $false; $statusRejected = $false
+try { Test-LowRamBinding -Stop -LowRam | Out-Null } catch [System.Management.Automation.ParameterBindingException] { $stopRejected = $true }
+try { Test-LowRamBinding -Status -LowRam | Out-Null } catch [System.Management.Automation.ParameterBindingException] { $statusRejected = $true }
+@{ normal=@(& $argsOnly $false); enabled=@(& $argsOnly $true); boot=$boot;
+   stop_rejected=$stopRejected; status_rejected=$statusRejected } | ConvertTo-Json -Depth 5 -Compress
+'''
+        result = subprocess.run(['powershell.exe', '-NoProfile', '-NonInteractive', '-Command', script],
+            env={**os.environ, 'LOWRAM_TEST_LAUNCHER': str(launcher)}, capture_output=True,
+            encoding='utf-8', timeout=20)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        normal = ['-avd', 'ai-sandbox-api35-google', '-port', '5556', '-no-window', '-no-audio',
+                  '-no-snapshot', '-camera-back', 'none', '-camera-front', 'none', '-memory', '1536',
+                  '-cores', '2', '-gpu', 'software', '-accel', 'on']
+        self.assertEqual(data['normal'], normal)
+        self.assertEqual(data['enabled'], normal + ['-lowram'])
+        self.assertEqual(data['boot'], 'bound')
+        self.assertIs(data['stop_rejected'], True)
+        self.assertIs(data['status_rejected'], True)
+
+
 if __name__ == '__main__':
     unittest.main()

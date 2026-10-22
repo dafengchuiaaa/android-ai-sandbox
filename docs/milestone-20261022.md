@@ -35,3 +35,7 @@ The public tree provides source, a prebuilt project collector JAR with matching 
 Public acceptance stays false; a new checkout must perform its own trusted configuration and acceptance. The historical human_foreground_input gate is no longer a prerequisite for generic agent-product acceptance; full component hashes, required AI/refresh evidence and fail-closed receipts remain. Historical snapshots/research retain their dates and are not current completion claims.
 
 Next: inspect actual QEMU runtime parameters and propose one minimal memory-reduction candidate. No configuration reduction or comparative improvement has been implemented or established in this milestone.
+
+## Later update
+
+This page preserves the pre-optimization baseline. See [optional low-RAM results](lowram-20261022.md) for the later development run; earlier no-reduction statements are historical.

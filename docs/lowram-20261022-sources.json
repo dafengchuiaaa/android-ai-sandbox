@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-22",
+  "base_commit": "641e081058408815e12def89e6eeea5a9013fa95",
+  "scope": "Curated delta, not a production receipt; development live success does not transfer to redacted exports",
+  "files": [
+    {
+      "path": "integration/instance_profiles.py",
+      "development_sha256": "ce8583e583c651dbc3f89739d883173308b03313103afbc9c72c74ff27ba2c4b",
+      "export_sha256": "e6ee55e7dcf18038e92d864ea6228a767f42709d73408ff5082c1c1ac0047d20",
+      "transform": [
+        "Published base residual local username replaced by LOCAL_USER; UTF-8/LF"
+      ]
+    },
+    {
+      "path": "integration/live_acceptance.py",
+      "development_sha256": "66ab46a1aa25938cd8b0bf043366c0c28375627790be6e8fc6160716776512e2",
+      "export_sha256": "4d5af3e867c549d8f2c7370153848327d88765d20fc3d913e3af786cfd34c0ad",
+      "transform": [
+        "Published base residual local username replaced by LOCAL_USER; UTF-8/LF"
+      ]
+    },
+    {
+      "path": "departments/workbuddy/start-baseline.ps1",
+      "development_sha256": "70b8a6871fdaeb920b1e438727639f8e06ed54a19c92e4130a4286bcba133fcb",
+      "export_sha256": "331f56abc094aff6026e4e09264b1d024a4bf99735c90700b561a5ba9b2c6c9e",
+      "transform": [
+        "Published base residual local username replaced by LOCAL_USER; UTF-8/LF"
+      ]
+    },
+    {
+      "path": "departments/workbuddy/round4-launcher/prepare-api35.ps1",
+      "development_sha256": "5646f684872ff231b421873e5dd7f04f7542b323022816c2ee13c90c802294af",
+      "export_sha256": "7de016a64ad38e60ff369de72aeccf68634da48e0d7226c14869ba5b13555e28",
+      "transform": [
+        "Published base residual local username replaced by LOCAL_USER; UTF-8/LF"
+      ]
+    },
+    {
+      "path": "departments/workbuddy/round4-launcher/start-api35.ps1",
+      "development_sha256": "65fedac1a5f252513d06a556ca086026dd19e8ab74e3a743494fcb5879a67908",
+      "export_sha256": "da023c9721934af42e489c069e321e28bceebfbf4950fe6c3a9257dd5c81e76c",
+      "transform": [
+        "Replace local account name with LOCAL_USER; UTF-8/LF export"
+      ]
+    },
+    {
+      "path": "tools/stepwise_session.py",
+      "development_sha256": "0a59b62fc984e152004024ade04929c29088b2fb899c7ade27acf2cfabd90291",
+      "export_sha256": "10db7443fb0b8b1f9d8f6216359253f0cd1591e313e5f185f6d32018a68065c9",
+      "transform": [
+        "Replace local account name with LOCAL_USER; UTF-8/LF export"
+      ]
+    },
+    {
+      "path": "tools/tests/test_stepwise_session.py",
+      "development_sha256": "daea1cab08c17b6a1e72af8c5ea26945428e49f8391e1175456f0767dba90057",
+      "export_sha256": "3f77f222a7bf6f3f4056ddfb4eab1795d2916f31a14f87cc4206ad4a7b03f915",
+      "transform": [
+        "Replace local account name with LOCAL_USER; UTF-8/LF export",
+        "Use public host reference import; skip new Windows-only checks on other hosts"
+      ]
+    },
+    {
+      "path": "experiments/host-supervisor/session_supervisor.py",
+      "development_sha256": "082b8ab36bec60c563662c2795fce9809ec38271990d470d409d4c99962760b0",
+      "export_sha256": "4285afd24bf4f914c4585216794b467be996bb002cceca00755a15118c14d71f",
+      "transform": [
+        "Replace local account name with LOCAL_USER; UTF-8/LF export"
+      ]
+    }
+  ]
+}

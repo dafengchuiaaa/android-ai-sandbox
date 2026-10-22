@@ -42,7 +42,7 @@ API35_STATE_DIR = (
 )
 API35_OBSERVE_ROOT = PROJECT_ROOT / "departments" / "antigravity" / "runtime" / "round4"
 API35_IMAGE_DIR = Path(
-    r"C:\Users\Administrator\AppData\Local\Android\Sdk"
+    r"C:\Users\LOCAL_USER\AppData\Local\Android\Sdk"
     r"\system-images\android-35\google_apis\x86_64"
 )
 

@@ -1320,6 +1320,9 @@ def serve(out):
     cfg = load(out / 'config.json')
     mode = cfg.get('mode', 'stepwise_input')
     opt_in = cfg.get('enable_startup_logcat_diagnostic', False)
+    low_ram = cfg.get('low_ram', False)
+    if type(low_ram) is not bool:
+        raise ValueError('low_ram must be a boolean')
     project = Path(cfg['project_root']).resolve()
     manifests = list(map(Path, cfg['manifests']))
     verify_files(project, manifests)
@@ -1348,9 +1351,12 @@ def serve(out):
         if gate.get('ready_for_device_integration') is not True:
             raise ValueError('live project bundle has not passed integration gate')
         runner.boot_attempted = True
-        runner.execute_cmd('start', [runner.powershell_exe, '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File',
-                                   str(runner.launcher_script), '-StateFile', str(runner.state_file),
-                                   '-BootTimeoutSec', '120', '-NativeTimeoutSec', '8'], timeout=140)
+        start_cmd = [runner.powershell_exe, '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File',
+                     str(runner.launcher_script), '-StateFile', str(runner.state_file),
+                     '-BootTimeoutSec', '120', '-NativeTimeoutSec', '8']
+        if low_ram:
+            start_cmd.append('-LowRam')
+        runner.execute_cmd('start', start_cmd, timeout=140)
         state = load(runner.state_file)
         save(runner.run_dir / 'state-start.json', state)
         if not support.valid_emulator_serial(state.get('serial')):
@@ -1439,6 +1445,9 @@ def begin(args):
     if os.name != 'nt':
         raise ValueError('live lifecycle is Windows PowerShell 5.1 only')
     mode = getattr(args, 'mode', 'stepwise_input')
+    low_ram = getattr(args, 'low_ram', False)
+    if type(low_ram) is not bool:
+        raise ValueError('low_ram must be a boolean')
     project, out = Path(args.project_root).resolve(), Path(args.out).resolve()
     manifests = [str(Path(p).resolve()) for p in args.manifest]
     count = verify_files(project, manifests)
@@ -1459,6 +1468,7 @@ def begin(args):
     cfg = {'project_root': str(project), 'python': str(Path(sys.executable).resolve()), 'adb': str(Path(args.adb).resolve()),
            'manifests': manifests, 'mode': mode, 'session_id': getattr(args, 'session_id', None),
            'enable_startup_logcat_diagnostic': getattr(args, 'enable_startup_logcat_diagnostic', False),
+           'low_ram': low_ram,
            'controlled_evidence_dir': str(out.parent),
            'tool_hashes': {str(p): digest(p) for p in paths}}
     save(out / 'config.json', cfg)
@@ -1526,6 +1536,8 @@ def main(argv=None):
     start.add_argument('--mode', choices=['stepwise_input', 'application_refresh'], default='stepwise_input')
     start.add_argument('--session-id', default=None)
     start.add_argument('--enable-startup-logcat-diagnostic', action='store_true', default=False)
+    start.add_argument('--low-ram', action='store_true', default=False,
+                       help='Explicitly enable the experimental 1536 MiB low-RAM launcher mode; default is off')
     worker = sub.add_parser('serve')
     worker.add_argument('--out', required=True)
     action = sub.add_parser('submit')

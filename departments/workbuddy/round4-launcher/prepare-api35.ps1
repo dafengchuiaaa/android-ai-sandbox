@@ -42,7 +42,7 @@
     -EmulatorExe  executable whose existence is preflighted
 
 .PARAMETER SdkRoot
-  Android SDK root. Default: C:\Users\Administrator\AppData\Local\Android\Sdk
+  Android SDK root. Default: C:\Users\LOCAL_USER\AppData\Local\Android\Sdk
 
 .PARAMETER Round4Root
   Round4 runtime root. Default: <script>\..\runtime\round4
@@ -58,7 +58,7 @@
 
 [CmdletBinding()]
 param(
-    [string]$SdkRoot = 'C:\Users\Administrator\AppData\Local\Android\Sdk',
+    [string]$SdkRoot = 'C:\Users\LOCAL_USER\AppData\Local\Android\Sdk',
     [string]$Round4Root = '',
     [string]$EmulatorExe = '',
     [switch]$TestMode
@@ -151,7 +151,7 @@ if ([string]::IsNullOrWhiteSpace($Round4Root)) {
 $Round4Root = Get-NormalizedPath $Round4Root
 
 $ProjectRoot = Get-NormalizedPath (Join-Path $PSScriptRoot '..\..\..')
-$FixedSdk = 'C:\Users\Administrator\AppData\Local\Android\Sdk'
+$FixedSdk = 'C:\Users\LOCAL_USER\AppData\Local\Android\Sdk'
 $FixedRuntime = Join-Path $ProjectRoot 'departments\workbuddy\runtime\round4'
 if ($TestMode) {
     $testRoot = Join-Path $ProjectRoot 'integration\round4\tests'

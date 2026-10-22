@@ -13,8 +13,8 @@
   "component_bundle": {},
   "lightweight_target_met": false,
   "remaining_project_work": [
-    "Portable trusted Windows/SDK configuration and fresh-checkout acceptance",
-    "One evidence-backed QEMU memory-reduction candidate and controlled comparison",
-    "Finite repeatability, more tasks and bounded long-running operation"
+    "Portable trusted configuration and fresh-checkout acceptance",
+    "Finite repeatability and CPU variability characterization",
+    "More tasks and bounded long-running operation"
   ]
 }

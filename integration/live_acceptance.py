@@ -17,7 +17,7 @@ import uuid
 from validate_response import validate
 
 ROOT = Path(__file__).resolve().parents[1]
-ADB = Path(r"C:\Users\Administrator\AppData\Local\Android\Sdk\platform-tools\adb.exe")
+ADB = Path(r"C:\Users\LOCAL_USER\AppData\Local\Android\Sdk\platform-tools\adb.exe")
 PHONE = ROOT / "departments/antigravity/phone.py"
 SCENE = ROOT / "departments/deepseek/scenarios/fdroid_search.py"
 STARTER = ROOT / "departments/workbuddy/start-baseline.ps1"

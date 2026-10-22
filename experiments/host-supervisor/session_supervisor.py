@@ -305,10 +305,14 @@ class Task101Supervisor:
                  total_s: float = TOTAL_S,
                  cleanup_s: float = CLEANUP_S,
                  enable_startup_logcat_diagnostic: bool = False,
-                 mode: str = "application_refresh"):
+                 mode: str = "application_refresh",
+                 low_ram: bool = False):
         if mode not in ("application_refresh", "stepwise_input"):
             raise ValueError(f"unsupported mode: {mode}")
+        if type(low_ram) is not bool:
+            raise ValueError("low_ram must be a boolean")
         self.mode = mode
+        self.low_ram = low_ram
         self.workspace = workspace
         self.prod_root = prod_root
         self.python_exe = python_exe
@@ -359,6 +363,7 @@ class Task101Supervisor:
             "task": "task101-gemini-supervisor-defense",
             "mode": self.mode,
             "enable_startup_logcat_diagnostic": self.enable_startup_logcat_diagnostic,
+            "low_ram": self.low_ram,
             "environment": "Gemini 3.8 Flash / Antigravity harness",
             "started_utc": "",
             "ended_utc": "",
@@ -1537,6 +1542,8 @@ class Task101Supervisor:
         ]
         if self.enable_startup_logcat_diagnostic:
             begin_cmd.append("--enable-startup-logcat-diagnostic")
+        if self.low_ram:
+            begin_cmd.append("--low-ram")
         return begin_cmd
 
     def run(self) -> int:
@@ -1836,6 +1843,8 @@ def build_parser() -> argparse.ArgumentParser:
     )
     subparsers = parser.add_subparsers(dest="subcommand", required=True)
     run_parser = subparsers.add_parser("run", help="Run supervisor session lifecycle", allow_abbrev=False)
+    run_parser.add_argument("--low-ram", action="store_true", default=False,
+                            help="Explicitly enable the experimental low-RAM launcher mode.")
     run_parser.add_argument(
         "--enable-startup-logcat-diagnostic",
         action="store_true",
@@ -1856,7 +1865,8 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     if getattr(args, "subcommand", None) == "run":
         supervisor = Task101Supervisor(
-            enable_startup_logcat_diagnostic=bool(args.enable_startup_logcat_diagnostic)
+            enable_startup_logcat_diagnostic=bool(args.enable_startup_logcat_diagnostic),
+            low_ram=args.low_ram,
         )
         return supervisor.run()
     return 2

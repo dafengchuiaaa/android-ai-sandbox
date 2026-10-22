@@ -73,7 +73,7 @@ param(
 $ErrorActionPreference = 'Stop'
 
 # ------------------------- fixed project paths -------------------------
-$SdkRoot     = 'C:\Users\Administrator\AppData\Local\Android\Sdk'
+$SdkRoot     = 'C:\Users\LOCAL_USER\AppData\Local\Android\Sdk'
 $EmulatorExe = Join-Path $SdkRoot 'emulator\emulator.exe'
 $AdbExe      = Join-Path $SdkRoot 'platform-tools\adb.exe'
 $AvdName     = 'ai-sandbox-baseline'

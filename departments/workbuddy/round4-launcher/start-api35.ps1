@@ -41,8 +41,8 @@
 
   FORBIDDEN by dispatch (this script does none of them):
     running the real emulator from the offline tests, adb kill-server,
-    batch kill by process name, force kill by stale PID, memory tuning
-    (1536 MB and 720x1280 stay as the baseline).
+    batch kill by process name, force kill by stale PID. The requested RAM
+    (1536 MB) and display (720x1280) stay as the baseline; LowRam is opt-in.
 
   TEST SEAMS (offline verification only; they relocate the sandbox but never
   relax any safety rule):
@@ -74,6 +74,11 @@
 .PARAMETER AutoStop
   Boot mode: after full verification, shut the instance down immediately.
 
+.PARAMETER LowRam
+  Explicit boot-only opt-in: append the emulator -lowram flag so the existing
+  1536 MB request can bypass the emulator's automatic RAM floor. Default is off.
+  This does not imply Android Go mode or guarantee host memory/CPU usage.
+
 .EXAMPLE
   .\start-api35.ps1 -Port 5556
   .\start-api35.ps1 -Port 5556 -AutoStop
@@ -95,6 +100,9 @@ param(
     [Parameter(ParameterSetName = 'Boot')]
     [switch]$AutoStop,
 
+    [Parameter(ParameterSetName = 'Boot')]
+    [switch]$LowRam,
+
     [Parameter(ParameterSetName = 'Stop')]
     [switch]$Stop,
 
@@ -105,7 +113,7 @@ param(
 
     [string]$StateFile = '',
 
-    [string]$SdkRoot = 'C:\Users\Administrator\AppData\Local\Android\Sdk',
+    [string]$SdkRoot = 'C:\Users\LOCAL_USER\AppData\Local\Android\Sdk',
     [string]$Round4Root = '',
     [string]$EmulatorExe = '',
     [string]$AdbExe = '',
@@ -502,7 +510,7 @@ $Round4Root = Get-NormalizedPath $Round4Root
 # Production paths are fixed. Offline doubles require an explicit mode and
 # must remain below the integration test root, never an arbitrary caller root.
 $ProjectRoot = Get-NormalizedPath (Join-Path $PSScriptRoot '..\..\..')
-$FixedSdk = 'C:\Users\Administrator\AppData\Local\Android\Sdk'
+$FixedSdk = 'C:\Users\LOCAL_USER\AppData\Local\Android\Sdk'
 $FixedRuntime = Join-Path $ProjectRoot 'departments\workbuddy\runtime\round4'
 if ($TestMode) {
     $testRoot = Join-Path $ProjectRoot 'integration\round4\tests'
@@ -709,6 +717,7 @@ $emuArgs = @(
     '-gpu', 'software',
     '-accel', 'on'
 )
+if ($LowRam) { $emuArgs += '-lowram' }
 Write-Host ("Launching: {0} {1}" -f $EmulatorExe, ($emuArgs -join ' '))
 
 $proc = $null
